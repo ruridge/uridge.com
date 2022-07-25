@@ -1,25 +1,18 @@
+import { FiExternalLink } from 'react-icons/fi'
 import Link from 'next/link'
 
-export const navigation = () => {
+export const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/projects">
-            <a>Projects</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/snippets">
-            <a>Snippets</a>
-          </Link>
-        </li>
-      </ul>
+    <nav className="flex justify-evenly">
+      <Link href="/">Home</Link>
+      <Link href="/projects">Projects</Link>
+      <Link href="/snippets">Snippets</Link>
+      <Link
+        href="https://github.com/ruridge/uridge.com"
+        className="flex items-center justify-between gap-1"
+      >
+        Source <FiExternalLink />
+      </Link>
     </nav>
   )
 }

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Navigation } from './navigation'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -30,6 +31,7 @@ export const Layout = (props: LayoutProps) => {
         <meta name="msapplication-TileColor" content="#2b5797" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
+      <Navigation />
       <main>{props.children}</main>
     </>
   )
