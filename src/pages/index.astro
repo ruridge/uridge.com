@@ -2,6 +2,7 @@
 import { Image, Picture } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import headImage from "../images/headshot.jpg";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,13 +20,17 @@ import Card from "../components/Card.astro";
           Digital artist / developer / designer
         </p>
       </div>
-      <Image
-        src="/images/headshot.jpg"
+      <Picture
+        src={headImage}
         alt="me"
         width={500}
+        widths={[200, 400, 800]}
+        sizes="(max-width: 800px) 100vw, 800px"
         aspectRatio="1:1"
         position="top"
-        class="rounded-full border-2 border-white shadow-xl w-60"
+        format="avif"
+        loading="eager"
+        class="w-60 overflow-hidden rounded-full border-2 border-white shadow-md"
       />
     </div>
     <ul class="link-card-grid">
