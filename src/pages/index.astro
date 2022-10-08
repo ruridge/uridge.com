@@ -1,23 +1,27 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import headImage from "../images/headshot.jpg";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Robert Uridge">
   <main>
-    <div class="flex">
+    <div class="flex items-start justify-between">
+      <ThemeToggle />
+    </div>
+    <div class="flex items-start">
       <div>
-        <h1 class="text-slate-700">
+        <h1 class="text-slate-700 dark:text-slate-50">
           <span
             class="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-transparent"
             >Robert</span
           >
           Uridge
         </h1>
-        <p class="text-xl text-gray-700 md:text-2xl">
-          Digital artist / developer / designer
+        <p class="text-xl text-gray-700 dark:text-slate-50 md:text-2xl">
+          Software Engineer / Artist / Developer / Designer / Craftsman
         </p>
       </div>
       <Picture
@@ -59,11 +63,6 @@ import headImage from "../images/headshot.jpg";
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
   h1 {
     font-size: 3rem;
     font-weight: 800;
