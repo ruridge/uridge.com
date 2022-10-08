@@ -20,6 +20,12 @@
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".astro"]
       }
+    },
+    {
+      "files": "tailwind.config.cjs",
+      "env": {
+        "node": true
+      }
     }
   ]
 }
