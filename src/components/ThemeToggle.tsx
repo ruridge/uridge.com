@@ -28,13 +28,9 @@ export function ThemeToggle() {
   });
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-    if (mediaQuery?.addEventListener) {
-      mediaQuery.addEventListener("change", update);
-    } else {
-      mediaQuery.addListener(update);
-    }
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      ?.addEventListener("change", update);
   }, []);
 
   useEffect(() => {
