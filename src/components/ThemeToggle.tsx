@@ -4,6 +4,21 @@ import { useState, useEffect } from "preact/hooks";
 const themes = ["light", "dark", "auto"] as const;
 type Theme = typeof themes[number];
 
+function update() {
+  const { classList } = document.documentElement;
+  classList.remove(...themes);
+
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    classList.add("dark");
+  } else {
+    classList.remove("dark");
+  }
+}
+
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme | null>(() => {
     if (import.meta.env.SSR) return null;
@@ -13,18 +28,17 @@ export function ThemeToggle() {
   });
 
   useEffect(() => {
-    const { classList } = document.documentElement;
-    classList.remove(...themes);
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      classList.add("dark");
+    if (mediaQuery?.addEventListener) {
+      mediaQuery.addEventListener("change", update);
     } else {
-      classList.remove("dark");
+      mediaQuery.addListener(update);
     }
+  }, []);
+
+  useEffect(() => {
+    update();
   }, [theme]);
 
   function handleThemeChange(newTheme: Theme) {
