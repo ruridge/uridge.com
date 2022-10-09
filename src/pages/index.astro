@@ -8,7 +8,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 
 <Layout title="Robert Uridge">
   <main>
-    <div class="flex items-start justify-between">
+    <div class="mt-2 flex items-start justify-end">
       <ThemeToggle />
     </div>
     <div class="flex items-start">
@@ -34,9 +34,10 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         position="top"
         format="avif"
         loading="eager"
-        class="w-60 overflow-hidden rounded-full border-2 border-white shadow-md"
+        class="mt-4 w-60 max-w-fit overflow-hidden rounded-full border-2 border-white shadow-md"
       />
     </div>
+
     <ul class="link-card-grid">
       <Card
         href="https://docs.astro.build/"
