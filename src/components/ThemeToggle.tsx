@@ -52,7 +52,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="inline-flex rounded-full border border-blue-700 p-[1px]">
+    <div className="inline-flex rounded-full border border-[#0071e3] p-[1px]">
       {themes.map((t) => {
         const isActive = t === theme;
         return (
@@ -67,8 +67,10 @@ export function ThemeToggle() {
               onChange={() => handleThemeChange(t)}
             ></input>
             <div
-              className={`min-w-[42px] rounded-full py-[1px] px-2 text-center text-sm capitalize ${
-                isActive && "bg-blue-700 text-white"
+              className={`min-w-[42px] rounded-full border py-[1px] px-2 text-center text-xs capitalize  ${
+                isActive
+                  ? "border-[#0071e3] bg-[#0071e3] text-white"
+                  : "border-transparent text-[#0071e3]"
               }`}
             >
               {t}

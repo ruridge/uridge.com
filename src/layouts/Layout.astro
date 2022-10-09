@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="mx-auto max-w-xl bg-slate-300 px-6 text-slate-900 dark:bg-slate-800 dark:text-slate-50"
+    class="mx-auto max-w-xl bg-neutral-50 px-6 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
   >
     <slot />
     <style is:global>
@@ -26,15 +26,8 @@ const { title } = Astro.props;
           45deg,
           rgb(var(--accent)),
           #da62c4 30%,
-          white 60%
+          transparent 60%
         );
-      }
-      html {
-        font-family: system-ui, sans-serif;
-      }
-      code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
       }
     </style>
   </body>
