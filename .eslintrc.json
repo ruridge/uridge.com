@@ -8,6 +8,10 @@
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
+  "rules": {
+    "tailwindcss/classnames-order": [1, { "config": "tailwind.config.cjs" }],
+    "tailwindcss/no-custom-classname": [1, { "config": "tailwind.config.cjs" }]
+  },
   "overrides": [
     {
       // Define the configuration for `.astro` file.

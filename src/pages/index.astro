@@ -7,7 +7,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <Layout title="Robert Uridge">
-  <main class="flex flex-col gap-4">
+  <main class="flex flex-col gap-4 py-4">
     <div class="flex items-start gap-4">
       <div>
         <h1 class="text-5xl font-extrabold text-slate-700 dark:text-slate-50">
@@ -35,39 +35,37 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       />
     </div>
 
-    <ul class="link-card-grid">
-      <Card
-        href="/work"
-        title="Work"
-        body="My projects/portfolio of work, past and present."
-      />
-      <Card
-        href="/posts"
-        title="Posts"
-        body="A collection of writings, useful tips, and code snippets."
-      />
-      <Card
-        href="/uses"
-        title="Uses"
-        body="A curated list of the tech I use."
-      />
-      <Card
-        href="https://github.com/ruridge/uridge.com/"
-        title="View Source"
-        body="Check out my source code."
-      />
+    <ul class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
+      {
+        [
+          {
+            href: "/work",
+            title: "Work",
+            body: "My projects/portfolio of work, past and present.",
+          },
+          {
+            href: "/posts",
+            title: "Posts",
+            body: "A collection of writings, useful tips, and code snippets.",
+          },
+          {
+            href: "/uses",
+            title: "Uses",
+            body: "A curated list of the tech I use.",
+          },
+          {
+            href: "https://github.com/ruridge/uridge.com/",
+            title: "View Source",
+            body: "Check out my source code.",
+            bums: "hello",
+          },
+        ].map(({ href, title, body }) => (
+          <Card href={href} title={title} body={body} />
+        ))
+      }
     </ul>
     <div class="flex items-start justify-end">
       <ThemeToggle />
     </div>
   </main>
 </Layout>
-
-<style>
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
