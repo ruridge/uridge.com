@@ -1,11 +1,14 @@
 ---
+import { Icon } from "astro-icon";
+
 export interface Props {
   title: string;
   body: string;
   href: string;
+  external?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, external = false } = Astro.props;
 ---
 
 <li
@@ -18,7 +21,13 @@ const { href, title, body } = Astro.props;
   >
     <h2 class="text-xl">
       {title}
-      <span>&rarr;</span>
+      {
+        external ? (
+          <Icon class="inline h-5 w-5" name="ci:external-link" />
+        ) : (
+          <span>&rarr;</span>
+        )
+      }
     </h2>
     <p class="mt-2 text-gray-600 dark:text-gray-300">
       {body}

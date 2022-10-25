@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div
+  class="sticky inset-x-0 top-0 z-10 bg-slate-50/80 py-2 backdrop-blur-xl dark:bg-slate-900/80"
+>
+  <nav class="flex justify-between">
+    <a href="/">Home</a>
+    <a href="/work">Work</a>
+    <a href="/posts">Posts</a>
+    <a href="/uses">Uses</a>
+    <a
+      href="https://github.com/ruridge/uridge.com"
+      class="inline-flex flex-row items-center"
+    >
+      <Icon class="mr-1.5 h-4 w-4" name="akar-icons:github-fill" />
+      <span>Source</span>
+      <Icon class="h-4 w-4" name="ci:external-link" />
+    </a>
+  </nav>
+</div>

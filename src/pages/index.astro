@@ -56,10 +56,10 @@ import headImage from "../images/headshot.jpg";
             href: "https://github.com/ruridge/uridge.com/",
             title: "View Source",
             body: "Check out my source code.",
-            bums: "hello",
+            external: true,
           },
-        ].map(({ href, title, body }) => (
-          <Card href={href} title={title} body={body} />
+        ].map(({ href, title, body, external }) => (
+          <Card href={href} title={title} body={body} external={external} />
         ))
       }
     </ul>
