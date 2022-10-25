@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Posts | Robert Uridge" description="">
+  <h1 class="text-3xl">Posts in progress... 🚧👷🚧</h1>
+  {
+    ["Article one", "Article two", "Article three", "Article four"].map(
+      (post) => <div>{post}</div>
+    )
+  }
+</Layout>

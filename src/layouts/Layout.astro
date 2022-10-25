@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "../components/ThemeToggle.astro";
+
 export interface Props {
   title: string;
   description: string;
@@ -8,7 +10,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
@@ -29,9 +31,15 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
-    class="mx-auto max-w-xl bg-neutral-50 px-6 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
+    class="mx-auto flex h-full max-w-xl flex-col bg-neutral-50 px-6 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
   >
-    <slot />
+    <div class="flex-1">
+      <slot />
+    </div>
+    <footer class="flex flex-none items-start justify-end py-4">
+      <ThemeToggle />
+    </footer>
+
     <style is:global>
       :root {
         --accent: 124, 58, 237;
