@@ -32,16 +32,20 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
-    class="mx-auto flex h-full max-w-xl flex-col bg-neutral-50 px-6 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
+    class="flex h-full flex-col items-center bg-neutral-50 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
   >
-    <div class="flex-1">
+    <div
+      class="sticky inset-x-0 top-0 z-10 w-full flex-none bg-slate-50/80 p-2 backdrop-blur-xl dark:bg-slate-900/80"
+    >
       <Navigation />
+    </div>
+
+    <div class="w-full max-w-xl flex-1 px-4">
       <slot />
     </div>
-    <footer class="flex flex-none items-start justify-end py-4">
+    <footer class="flex w-full max-w-xl flex-none items-start justify-end p-4">
       <ThemeToggle />
     </footer>
-
     <style is:global>
       :root {
         --accent: 124, 58, 237;
