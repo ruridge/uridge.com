@@ -1,0 +1,22 @@
+---
+const SIZE_CLASS = {
+  p: "text-lg",
+  h1: "text-5xl font-extrabold",
+  h2: "text-3xl font-bold",
+  h3: "text-xl",
+};
+type TextSizes = keyof typeof SIZE_CLASS;
+
+export interface Props {
+  as?: TextSizes;
+  size?: TextSizes;
+}
+
+const { as = "p", size } = Astro.props;
+const Element = as;
+const computedSize = size ?? as;
+const defaultClasses = ["text-gray-700 dark:text-slate-50"];
+defaultClasses.push(SIZE_CLASS[computedSize]);
+---
+
+<Element class={defaultClasses.join(" ")}><slot /></Element>
