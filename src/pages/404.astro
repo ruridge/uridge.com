@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="404: page not found" description="">
+  <div class="flex min-h-full flex-col">
+    <div
+      class="flex flex-1 flex-col justify-center text-gray-900 dark:text-gray-200"
+    >
+      <h1
+        class="mb-4 text-6xl font-bold text-gray-800 dark:text-gray-200 lg:mb-6 lg:text-8xl"
+      >
+        Page not found
+      </h1>
+      <p class="mb-4 text-3xl lg:mb-6 lg:text-4xl">
+        Sorry <span role="img" aria-label="Pensive emoji">😔</span> I couldn't find
+        what you were looking for.
+      </p>
+    </div>
+    <div class="mx-auto w-full max-w-screen-md pt-10 pb-[15vh]">
+      <a
+        href="/"
+        class="mb-4 inline-flex items-center text-3xl text-[#0071e3] hover:underline dark:text-blue-500 lg:mb-6 lg:text-4xl"
+      >
+        <Icon name="akar-icons:arrow-up-left" class="h-9 w-9" />
+        Go to the homepage
+      </a>
+    </div>
+  </div>
+</Layout>
