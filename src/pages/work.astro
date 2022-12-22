@@ -1,8 +1,27 @@
 ---
+import Text from "@components/ui/Text.astro";
 import Layout from "@layouts/Layout.astro";
+
+const allWork = await Astro.glob("./work/*.md");
 ---
 
-<Layout title="Uses | Robert Uridge" description="">
-  <h1 class="text-3xl">Work in progress... 🚧👷🚧</h1>
-  {["one", "two", "three", "four"].map((project) => <div>{project}</div>)}
+<Layout title="Work | Robert Uridge" description="">
+  <Text as="h1" size="h2">Work</Text>
+  <br />
+  <div class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
+    {
+      allWork.map((work) => (
+        <div class="">
+          <a href={work.url}>
+            <img
+              src={work.frontmatter.image.url}
+              alt={work.frontmatter.image.alt}
+              class="rounded-lg shadow"
+            />
+            <Text as="span">{work.frontmatter.title}</Text>
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </Layout>

@@ -1,0 +1,9 @@
+html.dark:not(.system) #dark + div {
+  color: orange;
+}
+html.light #light + div {
+  color: orange;
+}
+html.auto #auto + div {
+  color: orange;
+}

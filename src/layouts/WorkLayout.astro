@@ -1,0 +1,15 @@
+---
+import Layout from "./Layout.astro";
+import Text from "@ui/Text.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <Text as="h1" size="h2">{frontmatter.title}</Text>
+  <Text>{frontmatter.pubDate.slice(0, 10)}</Text>
+  <Text><em>{frontmatter.description}</em></Text>
+  <Text>Written by {frontmatter.author}</Text>
+  <img alt={frontmatter.image.alt} src={frontmatter.image.url} width="300" />
+  <slot />
+</Layout>

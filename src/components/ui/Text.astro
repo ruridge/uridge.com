@@ -8,13 +8,13 @@ const SIZE_CLASS = {
 type TextSizes = keyof typeof SIZE_CLASS;
 
 export interface Props {
-  as?: TextSizes;
+  as?: TextSizes | "span";
   size?: TextSizes;
 }
 
 const { as = "p", size } = Astro.props;
 const Element = as;
-const computedSize = size ?? as;
+const computedSize = size ?? (as !== "span" ? as : "p");
 const defaultClasses = ["text-gray-700 dark:text-slate-50"];
 defaultClasses.push(SIZE_CLASS[computedSize]);
 ---
