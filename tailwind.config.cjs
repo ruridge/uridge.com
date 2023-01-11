@@ -3,24 +3,12 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      transitionTimingFunction: {
-        "out-quint": "cubic-bezier(0.22, 1, 0.36, 1)",
-      },
-      transitionDuration: {
-        600: "600ms",
-      },
-      gridAutoColumns: {
-        "24ch": "24ch",
-      },
       colors: {
-        solarized: {
-          700: "#083642",
-          800: "#032b36",
-          900: "#02212b",
-        },
+        default: "rgb(var(--color-default) / <alpha-value>)",
+        neutral: "rgb(var(--color-neutral) / <alpha-value>)",
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
       },
     },
   },
   plugins: [],
-  darkMode: "class",
 };

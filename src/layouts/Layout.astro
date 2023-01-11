@@ -1,11 +1,12 @@
 ---
-import Navigation from "@components/Navigation.astro";
-import ThemeToggle from "@components/ThemeToggle.astro";
-
 export interface Props {
   title: string;
   description: string;
 }
+
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
 const { title, description } = Astro.props;
 ---
@@ -13,51 +14,13 @@ const { title, description } = Astro.props;
 <!DOCTYPE html>
 <html lang="en" class="h-full">
   <head>
-    <meta charset="UTF-8" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!--
-      We need sizes="any" for <link> to .ico file in order to fix the Chrome
-      bug where it chooses an ICO file over an SVG.
-      ref: https://twitter.com/subzey/status/1417099064949235712
-    -->
-    <link rel="icon" href="/favicon.ico?v=1" sizes="any" />
-    <!-- TODO: create an svg faviocon
-      <link rel="icon" href="/icon.svg" type="image/svg+xml" /> -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-
-    <meta name="generator" content={Astro.generator} />
+    <BaseHead title={title} description={description} />
   </head>
-  <body
-    class="flex h-full flex-col items-center bg-neutral-50 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
-  >
-    <div
-      class="sticky inset-x-0 top-0 z-10 w-full flex-none bg-slate-50/80 p-2 backdrop-blur-xl dark:bg-slate-900/80"
-    >
-      <div class="mx-auto max-w-6xl flex">
-        <Navigation />
-      </div>
-    </div>
-
-    <div class="w-full max-w-xl flex-1 px-4">
+  <body class="mx-auto flex h-full max-w-[65ch] flex-col break-words p-5">
+    <Header title="hellooo" />
+    <main class="flex-1">
       <slot />
-    </div>
-    <footer class="flex w-full max-w-xl flex-none items-start justify-end p-4">
-      <ThemeToggle />
-    </footer>
-    <style is:global>
-      :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-          45deg,
-          rgb(var(--accent)),
-          #da62c4 30%,
-          transparent 60%
-        );
-      }
-    </style>
+    </main>
+    <Footer />
   </body>
 </html>

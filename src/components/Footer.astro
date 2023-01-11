@@ -1,0 +1,10 @@
+---
+import { SITE_TITLE } from "src/config";
+import Link from "@ui/Link.astro";
+const today = new Date();
+---
+
+<footer class="p-6 text-center">
+  &copy; {today.getFullYear()}
+  <Link href="https://www.uridge.com">{SITE_TITLE}</Link>
+</footer>

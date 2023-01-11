@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import Link from "./Link.astro";
 
 export interface Props {
   title: string;
@@ -12,10 +13,10 @@ const { href, title, body, external = false } = Astro.props;
 ---
 
 <li
-  class="flex rounded-lg bg-[length:400%] bg-right p-0.5 shadow-md transition-[background-position] duration-600 ease-out-quint focus-within:bg-left hover:bg-left"
+  class="duration-600 ease-out-quint flex rounded-lg bg-[length:400%] bg-right p-0.5 shadow-md transition-[background-position] focus-within:bg-left hover:bg-left"
   style={{ backgroundImage: "var(--accent-gradient)" }}
 >
-  <a
+  <Link
     href={href}
     class="w-full rounded-md bg-white py-4 px-5 text-neutral-900 opacity-80 ease-out-quint hover:text-purple-600 hover:transition-[color] hover:duration-600 dark:bg-slate-800 dark:text-white"
   >
@@ -32,5 +33,5 @@ const { href, title, body, external = false } = Astro.props;
     <p class="mt-2 text-gray-600 dark:text-gray-300">
       {body}
     </p>
-  </a>
+  </Link>
 </li>

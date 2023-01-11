@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Design System Theming */
+  html {
+    --color-default: 236 228 236;
+    --color-neutral: 29 40 58;
+    --color-primary: 112 64 255;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      --color-default: 15 23 41;
+      --color-neutral: 29 40 58;
+      --color-primary: 112 64 255;
+    }
+  }
+
+  html {
+    @apply bg-default text-slate-900 selection:bg-purple-200 selection:text-purple-500 dark:text-purple-100 dark:selection:bg-purple-100 dark:selection:text-slate-900;
+  }
+  /*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+  table {
+    @apply w-full text-left;
+  }
+
+  /* Markdown Styling */
+  .markdown {
+    @apply leading-relaxed;
+  }
+  .markdown h1 {
+    @apply mt-8 mb-4 text-3xl font-extrabold;
+  }
+  .markdown h2 {
+    @apply mt-8 mb-4 text-2xl font-semibold;
+  }
+  .markdown h3 {
+    @apply mt-4 mb-2 text-xl font-semibold;
+  }
+  .markdown h4 {
+    @apply mt-2 mb-1 text-base font-medium;
+  }
+  .markdown li {
+    @apply ml-7 list-disc text-slate-900 dark:text-white;
+  }
+  .markdown ol > li {
+    @apply mb-2 list-decimal;
+  }
+  .markdown p {
+    @apply mb-4 dark:text-white;
+  }
+  .markdown a > p {
+    @apply mb-0 text-sm;
+  }
+  .markdown a {
+    @apply text-purple-500 underline decoration-slate-500 
+            decoration-dotted underline-offset-2  
+            hover:text-purple-700 dark:text-purple-200 
+            dark:decoration-purple-200 dark:hover:text-purple-300;
+  }
+
+  .markdown code {
+    @apply break-words [direction:ltr] [unicode-bidi:embed] lg:break-normal;
+  }
+
+  .markdown code:not(.markdown pre code) {
+    @apply rounded border border-purple-200 bg-purple-200/40 px-0.5 py-[0.5px] dark:border-purple-400/30 dark:bg-purple-400/20;
+  }
+
+  .markdown pre {
+    @apply mx-auto mb-3 rounded border border-purple-300/80 p-2 pl-3 font-mono shadow-xl sm:pt-2;
+  }
+
+  .markdown ol {
+    @apply w-full;
+  }
+
+  .markdown details {
+    @apply mt-2 w-full rounded-md border border-purple-300/80 bg-[#191724] px-3 transition-all duration-300 ease-in-out;
+  }
+  .markdown details[open] {
+    @apply bg-purple-200/10;
+  }
+  .markdown details pre {
+    @apply border-0 shadow-none;
+  }
+  .markdown details > summary {
+    @apply cursor-pointer text-[#A6ACCD];
+  }
+  .markdown summary {
+    @apply py-3;
+  }
+
+  .markdown p > img {
+    @apply mt-8 text-sm;
+  }
+  .markdown table > tbody > tr > td > a {
+    overflow-wrap: anywhere;
+  }
+  .markdown table {
+    @apply max-w-full table-fixed;
+  }
+  .markdown table > tbody > tr > td {
+    @apply align-top;
+  }
+  .markdown blockquote a {
+    @apply text-slate-900 dark:text-purple-50;
+  }
+}

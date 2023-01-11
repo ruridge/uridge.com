@@ -1,8 +1,0 @@
-{
-  "name": "",
-  "short_name": "",
-  "icons": [
-    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/icon-512-splash.png", "type": "image/png", "sizes": "512x512" }
-  ]
-}

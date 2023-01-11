@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import Link from "@ui/Link.astro";
 
 const links = [
   { href: "/", label: "Home" },
@@ -12,17 +13,17 @@ const links = [
 <nav class="flex justify-between">
   {
     links.map(({ href, label }) => (
-      <a class="py-2" href={href}>
+      <Link class="py-2" href={href}>
         {label}
-      </a>
+      </Link>
     ))
   }
-  <a
+  <Link
     href="https://github.com/ruridge/uridge.com"
     class="inline-flex flex-row items-center py-2"
   >
     <Icon class="mr-1.5 h-4 w-4" name="akar-icons:github-fill" />
     <span>Source</span>
     <Icon class="h-4 w-4" name="ci:external-link" />
-  </a>
+  </Link>
 </nav>

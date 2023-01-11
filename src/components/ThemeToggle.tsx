@@ -1,8 +1,5 @@
-import { h, Fragment } from "preact";
-import { useState, useEffect } from "preact/hooks";
-
 const themes = ["light", "dark", "auto"] as const;
-type Theme = typeof themes[number];
+type Theme = (typeof themes)[number];
 
 function update() {
   const { classList } = document.documentElement;

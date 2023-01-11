@@ -1,70 +1,53 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
-import Card from "@ui/Card.astro";
-import headImage from "../images/headshot.jpg";
+import Link from "@ui/Link.astro";
 ---
 
-<Layout
-  title="Robert Uridge"
-  description="Robert Uridge is a professional front-end developer based in Taipei, Taiwan."
->
-  <main class="mt-4 flex flex-col gap-4">
-    <div class="flex items-start gap-4">
-      <div>
-        <h1 class="text-5xl font-extrabold text-slate-700 dark:text-slate-50">
-          <span
-            class="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-transparent"
-            >Robert</span
-          >
-          Uridge
-        </h1>
-        <p class="text-lg text-gray-700 dark:text-slate-50">
-          Software Engineer / Artist / Developer / Designer / Craftsman
-        </p>
-      </div>
-      <Picture
-        src={headImage}
-        alt="me"
-        width={500}
-        widths={[200, 400, 800]}
-        sizes="(max-width: 800px) 100vw, 800px"
-        aspectRatio="1:1"
-        position="top"
-        format="avif"
-        loading="eager"
-        class="mt-2 w-60 max-w-fit overflow-hidden rounded-full border-2 border-white shadow-md"
-      />
-    </div>
-
-    <ul class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
-      {
-        [
-          {
-            href: "/work",
-            title: "Work",
-            body: "My projects/portfolio of work, past and present.",
-          },
-          {
-            href: "/posts",
-            title: "Posts",
-            body: "A collection of writings, useful tips, and code snippets.",
-          },
-          {
-            href: "/uses",
-            title: "Uses",
-            body: "A curated list of the tech I use.",
-          },
-          {
-            href: "https://github.com/ruridge/uridge.com/",
-            title: "View Source",
-            body: "Check out my source code.",
-            external: true,
-          },
-        ].map(({ href, title, body, external }) => (
-          <Card href={href} title={title} body={body} external={external} />
-        ))
-      }
-    </ul>
-  </main>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1>🧑‍🚀 Hello, Astronaut!</h1>
+  <p>
+    Welcome to the official <Link href="https://astro.build/">Astro</Link> blog starter
+    template. This template serves as a lightweight, minimally-styled starting point
+    for anyone looking to build a personal website, blog, or portfolio with Astro.
+  </p>
+  <p>
+    This template comes with a few integrations already configured in your
+    <code>astro.config.mjs</code> file. You can customize your setup with
+    <Link href="https://astro.build/integrations">Astro Integrations</Link> to add
+    tools like Tailwind, React, or Vue to your project.
+  </p>
+  <p>Here are a few ideas on how to get started with the template:</p>
+  <ul>
+    <li>Edit this page in <code>src/pages/index.astro</code></li>
+    <li>
+      Edit the site header items in <code>src/components/Header.astro</code>
+    </li>
+    <li>
+      Add your name to the footer in <code>src/components/Footer.astro</code>
+    </li>
+    <li>
+      Check out the included blog posts in <code>src/pages/blog/</code>
+    </li>
+    <li>
+      Customize the blog post page layout in <code
+        >src/layouts/BlogPost.astro</code
+      >
+    </li>
+  </ul>
+  <p>
+    Have fun! If you get stuck, remember to <Link
+      href="https://docs.astro.build/"
+    >
+      read the docs
+    </Link> or <Link href="https://astro.build/chat">join us on Discord</Link> to
+    ask questions.
+  </p>
+  <p>
+    Looking for a blog template with a bit more personality? Check out <Link
+      href="https://github.com/Charca/astro-blog-template"
+    >
+      astro-blog-template
+    </Link> by <Link href="https://twitter.com/Charca">Maxi Ferreira</Link>.
+  </p>
 </Layout>

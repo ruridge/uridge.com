@@ -1,0 +1,17 @@
+---
+export type Props = astroHTML.JSX.AnchorHTMLAttributes;
+
+const { href, class: className, ...rest } = Astro.props;
+const slot = await Astro.slots.render("default");
+---
+
+<a
+  href={href}
+  class:list={[
+    "text-blue-600 dark:text-blue-400 hover:underline",
+    Astro.props["class:list"],
+    className,
+  ]}
+  {...rest}
+  set:html={slot}
+/>

@@ -1,0 +1,20 @@
+---
+const SIZE_CLASS = {
+  h1: "text-5xl font-extrabold",
+  h2: "text-3xl font-bold",
+  h3: "text-xl",
+};
+type TextSizes = keyof typeof SIZE_CLASS;
+export interface Props {
+  as?: TextSizes;
+  size?: TextSizes;
+}
+
+const { as: Element = "h1", size } = Astro.props;
+---
+
+<Element
+  class:list={["text-gray-700 dark:text-slate-50", SIZE_CLASS[size ?? Element]]}
+>
+  <slot />
+</Element>

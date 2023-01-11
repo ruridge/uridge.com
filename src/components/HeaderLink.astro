@@ -1,0 +1,25 @@
+---
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  iconBefore?: string;
+  iconAfter?: string;
+}
+
+import { Icon } from "astro-icon";
+import Link from "@ui/Link.astro";
+
+const { href, iconBefore, iconAfter } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+---
+
+<Link
+  href={href}
+  class:list={["flex items-center gap-1", { "font-bold underline": isActive }]}
+>
+  {iconBefore && <Icon name={iconBefore} class="h-4" />}
+  <span>
+    <slot />
+  </span>
+  {iconAfter && <Icon name={iconAfter} class="h-4" />}
+</Link>

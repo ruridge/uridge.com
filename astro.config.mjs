@@ -1,17 +1,18 @@
 import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://www.uridge.com",
   integrations: [
-    preact(),
-    tailwind(),
+    tailwind({ config: { applyBaseStyles: false } }),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
     sitemap(),
+    mdx(),
   ],
 });

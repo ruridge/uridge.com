@@ -1,5 +1,11 @@
 {
   "root": true,
+  "parser": "@typescript-eslint/parser", // Specifies the TS ESLint parser
+  "env": {
+    "es2022": true,
+    "browser": true
+  },
+  "plugins": ["@typescript-eslint", "astro", "tailwindcss"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -8,28 +14,34 @@
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
+  "parserOptions": {
+    "ecmaVersion": "latest", // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of import
+    "project": "./tsconfig.json" // Allows for the use of rules that require parserServices to be generated
+  },
   "rules": {
-    "tailwindcss/classnames-order": [1, { "config": "tailwind.config.cjs" }],
-    "tailwindcss/no-custom-classname": [1, { "config": "tailwind.config.cjs" }]
+    "tailwindcss/classnames-order": "off"
   },
   "overrides": [
     {
-      // Define the configuration for `.astro` file.
       "files": ["*.astro"],
-      // Allows Astro components to be parsed.
       "parser": "astro-eslint-parser",
-      // Parse the script in `.astro` as TypeScript by adding the following configuration.
-      // It's the setting you need when using TypeScript.
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".astro"]
-      }
+      },
+      "globals": {
+        // Allows the use of the 'astroHTML' type defs in `.astro` files.
+        "astroHTML": "readonly"
+      },
+      "rules": {}
     },
     {
-      "files": "tailwind.config.cjs",
+      "files": ["./*.cjs"],
       "env": {
         "node": true
-      }
+      },
+      "rules": {}
     }
   ]
 }
