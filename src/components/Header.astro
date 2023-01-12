@@ -1,13 +1,26 @@
 ---
+import { Image } from "@astrojs/image/components";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../config";
+import heroImage from "./src/assets/profile.jpeg";
 ---
 
-<header class="mb-8">
-  <h2 class="my-2">
-    {SITE_TITLE}
-  </h2>
-  <nav class="flex gap-5">
+<header class="my-12 flex justify-between">
+  <a class="group flex items-center gap-2" href="/" rel="home">
+    <Image
+      src={heroImage}
+      alt=""
+      width="144"
+      height="144"
+      class="rounded-full w-12 h-12"
+      quality="60"
+    />
+    <span
+      class="bg-gradient-to-r from-blue-400 to-fuchsia-500 bg-clip-text font-bold group-hover:text-transparent"
+      >{SITE_TITLE}</span
+    >
+  </a>
+  <nav class="flex gap-10">
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
@@ -15,7 +28,6 @@ import { SITE_TITLE } from "../config";
       href="https://github.com/ruridge/uridge.com"
       target="_blank"
       iconBefore="akar-icons:github"
-      iconAfter="akar-icons:link-out"
     >
       Source
     </HeaderLink>

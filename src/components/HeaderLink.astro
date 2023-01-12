@@ -5,21 +5,29 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
 }
 
 import { Icon } from "astro-icon";
-import Link from "@ui/Link.astro";
 
 const { href, iconBefore, iconAfter } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+
+const isActive =
+  String(href) === "/" ? pathname === "/" : pathname.startsWith(String(href));
 ---
 
-<Link
+<a
   href={href}
-  class:list={["flex items-center gap-1", { "font-bold underline": isActive }]}
+  class:list={[
+    "relative flex after:absolute after:-bottom-0 after:h-1.5 after:w-full after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100",
+    isActive
+      ? "after:bg-blue-400 after:scale-x-100"
+      : "after:bg-neutral-150 dark:after:bg-gray-800 after:scale-x-0",
+  ]}
 >
-  {iconBefore && <Icon name={iconBefore} class="h-4" />}
-  <span>
-    <slot />
+  <span class="flex items-center gap-1">
+    {iconBefore && <Icon name={iconBefore} class="h-4" />}
+    <span>
+      <slot />
+    </span>
+    {iconAfter && <Icon name={iconAfter} class="h-4" />}
   </span>
-  {iconAfter && <Icon name={iconAfter} class="h-4" />}
-</Link>
+</a>

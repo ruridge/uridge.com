@@ -4,8 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        neutral: {
+          150: "rgb(237, 237, 237)",
+        },
         default: "rgb(var(--color-default) / <alpha-value>)",
-        neutral: "rgb(var(--color-neutral) / <alpha-value>)",
         primary: "rgb(var(--color-primary) / <alpha-value>)",
       },
     },

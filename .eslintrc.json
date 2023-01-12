@@ -19,6 +19,11 @@
     "sourceType": "module", // Allows for the use of import
     "project": "./tsconfig.json" // Allows for the use of rules that require parserServices to be generated
   },
+  "settings": {
+    "tailwindcss": {
+      "config": "./tailwind.config.cjs"
+    }
+  },
   "rules": {
     "tailwindcss/classnames-order": "off"
   },
