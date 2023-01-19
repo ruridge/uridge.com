@@ -5,7 +5,7 @@ import { SITE_TITLE } from "../config";
 import heroImage from "../assets/profile.jpg";
 ---
 
-<header class="my-12 flex justify-between">
+<header class="my-4 flex justify-between sm:my-12">
   <a class="group flex items-center gap-2" href="/" rel="home">
     <Image
       src={heroImage}
@@ -16,20 +16,68 @@ import heroImage from "../assets/profile.jpg";
       quality={60}
     />
     <span
-      class="bg-gradient-to-r from-blue-400 to-fuchsia-500 bg-clip-text font-bold group-hover:text-transparent"
+      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text font-bold transition-colors duration-200 group-hover:text-transparent dark:from-violet-400 dark:to-fuchsia-400"
       >{SITE_TITLE}</span
     >
   </a>
-  <nav class="flex gap-10">
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink
-      href="https://github.com/ruridge/uridge.com"
-      target="_blank"
-      iconBefore="akar-icons:github"
+  <nav class="flex">
+    <button
+      id="nav-menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      class="group peer z-30 flex h-12 w-12 items-center justify-center rounded-full bg-black/5 dark:bg-white/5 md:hidden"
     >
-      Source
-    </HeaderLink>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 text-gray-700 group-aria-expanded:text-gray-300 dark:text-gray-300"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+          class="translate-x-0 transition-transform group-aria-expanded:translate-x-full"
+        ></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+          class="absolute -translate-x-full transition-transform group-aria-expanded:translate-x-0"
+        ></path>
+      </svg>
+    </button>
+    <div
+      id="nav-menu"
+      class="absolute inset-0 hidden flex-col justify-center gap-8 bg-black font-serif text-4xl font-bold tracking-wide text-slate-100 peer-aria-expanded:flex md:static md:flex md:flex-row md:bg-transparent md:font-sans md:text-base md:font-normal md:tracking-normal md:text-inherit"
+    >
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/work">Work</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink
+        href="https://github.com/ruridge/uridge.com"
+        target="_blank"
+        iconBefore="akar-icons:github"
+      >
+        Source
+      </HeaderLink>
+    </div>
   </nav>
+
+  <script>
+    const navMenuToggle = document.getElementById(
+      "nav-menu-toggle"
+    ) as HTMLButtonElement;
+    const navMenu = document.getElementById("nav-menu") as HTMLElement;
+
+    navMenuToggle.addEventListener("click", () => {
+      const expanded = navMenuToggle.getAttribute("aria-expanded") === "true";
+      navMenuToggle.setAttribute("aria-expanded", String(!expanded));
+    });
+  </script>
 </header>

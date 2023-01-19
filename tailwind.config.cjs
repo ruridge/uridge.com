@@ -10,6 +10,15 @@ module.exports = {
         default: "rgb(var(--color-default) / <alpha-value>)",
         primary: "rgb(var(--color-primary) / <alpha-value>)",
       },
+      animation: {
+        "bg-slide": "bg_slide 5s linear infinite alternate",
+      },
+      keyframes: {
+        bg_slide: {
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "100% 0" },
+        },
+      },
     },
   },
   plugins: [],

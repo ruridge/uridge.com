@@ -2,52 +2,53 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
+import Text from "@ui/Text.astro";
+
+const allWork = await Astro.glob("./work/*.md");
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <h1>🧑‍🚀 Hello, Astronaut!</h1>
-  <p>
-    Welcome to the official <Link href="https://astro.build/">Astro</Link> blog starter
-    template. This template serves as a lightweight, minimally-styled starting point
-    for anyone looking to build a personal website, blog, or portfolio with Astro.
-  </p>
-  <p>
-    This template comes with a few integrations already configured in your
-    <code>astro.config.mjs</code> file. You can customize your setup with
-    <Link href="https://astro.build/integrations">Astro Integrations</Link> to add
-    tools like Tailwind, React, or Vue to your project.
-  </p>
-  <p>Here are a few ideas on how to get started with the template:</p>
-  <ul>
-    <li>Edit this page in <code>src/pages/index.astro</code></li>
-    <li>
-      Edit the site header items in <code>src/components/Header.astro</code>
-    </li>
-    <li>
-      Add your name to the footer in <code>src/components/Footer.astro</code>
-    </li>
-    <li>
-      Check out the included blog posts in <code>src/pages/blog/</code>
-    </li>
-    <li>
-      Customize the blog post page layout in <code
-        >src/layouts/BlogPost.astro</code
+  <div class="mt-8 mb-16 flex flex-col gap-4 md:mt-28 md:mb-32">
+    <h1
+      class="font-serif text-4xl font-bold tracking-tight sm:text-8xl sm:font-normal"
+    >
+      <a
+        href="/work"
+        class="animate-bg-slide bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-[length:400%] bg-clip-text bg-right text-transparent transition-all duration-700 hover:bg-[length:100%]"
+        >I make web apps.</a
       >
-    </li>
-  </ul>
-  <p>
-    Have fun! If you get stuck, remember to <Link
-      href="https://docs.astro.build/"
+    </h1>
+    <p class="order-first text-xl font-bold uppercase tracking-wide">
+      <span class="">Hello,</span> my name is Rob
+    </p>
+    <p
+      class="text-2xl font-light leading-8 sm:mt-4 sm:text-3xl sm:leading-normal"
     >
-      read the docs
-    </Link> or <Link href="https://astro.build/chat">join us on Discord</Link> to
-    ask questions.
-  </p>
-  <p>
-    Looking for a blog template with a bit more personality? Check out <Link
-      href="https://github.com/Charca/astro-blog-template"
-    >
-      astro-blog-template
-    </Link> by <Link href="https://twitter.com/Charca">Maxi Ferreira</Link>.
-  </p>
+      I'm a front-end developer and love building polished user interfaces. <br
+      />As well as <Link href="https://github.com/ruridge">coding</Link>, I also
+      write about the web on my <Link href="/blog">blog</Link>.
+    </p>
+  </div>
+  <h2
+    class="font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-white"
+  >
+    Featured Posts
+  </h2>
+  <br />
+  <div class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
+    {
+      allWork.map((work) => (
+        <div class="">
+          <a href={work.url}>
+            <img
+              src={work.frontmatter.image.url}
+              alt={work.frontmatter.image.alt}
+              class="rounded-lg shadow"
+            />
+            <Text as="span">{work.frontmatter.title}</Text>
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </Layout>
