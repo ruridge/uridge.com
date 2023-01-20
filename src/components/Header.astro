@@ -1,7 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../config";
 import heroImage from "../assets/profile.jpg";
 ---
 
@@ -16,8 +15,8 @@ import heroImage from "../assets/profile.jpg";
       quality={60}
     />
     <span
-      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text font-bold transition-colors duration-200 group-hover:text-transparent dark:from-violet-400 dark:to-fuchsia-400"
-      >{SITE_TITLE}</span
+      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text font-semibold transition-colors duration-200 group-hover:text-transparent dark:from-violet-400 dark:to-fuchsia-400"
+      >ROBERT <span class="-ml-1 font-light">URIDGE</span></span
     >
   </a>
   <nav id="nav-menu" class="flex">
