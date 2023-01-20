@@ -51,19 +51,24 @@ import heroImage from "../assets/profile.jpg";
       </svg>
     </button>
     <div
-      class="absolute inset-0 hidden flex-col justify-center gap-8 bg-black font-serif text-4xl font-bold tracking-wide text-slate-100 peer-aria-expanded:flex md:static md:flex md:flex-row md:bg-transparent md:font-sans md:text-base md:font-normal md:tracking-normal md:text-inherit"
+      class="absolute inset-0 hidden flex-col justify-center bg-black peer-aria-expanded:flex md:static md:flex md:bg-transparent"
     >
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/work">Work</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink
-        href="https://github.com/ruridge/uridge.com"
-        target="_blank"
-        iconBefore="akar-icons:github"
+      <div
+        id="nav-menu-content"
+        class="flex max-h-96 flex-1 translate-y-4 flex-col justify-around font-serif text-4xl font-bold tracking-wide text-slate-100 opacity-0 transition-all duration-500 md:translate-y-0 md:flex-row md:gap-8 md:font-sans md:text-base md:font-normal md:tracking-normal md:text-inherit md:opacity-100"
       >
-        Source
-      </HeaderLink>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/work">Work</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink
+          href="https://github.com/ruridge/uridge.com"
+          target="_blank"
+          iconBefore="akar-icons:github"
+        >
+          Source
+        </HeaderLink>
+      </div>
     </div>
   </nav>
 
@@ -74,6 +79,9 @@ import heroImage from "../assets/profile.jpg";
     const navMenuToggle = document.getElementById(
       "nav-menu-toggle"
     ) as HTMLButtonElement;
+    const navMenuContent = document.getElementById(
+      "nav-menu-content"
+    ) as HTMLElement;
 
     const trap = createFocusTrap(navMenu, {
       onActivate: () => {
@@ -83,6 +91,17 @@ import heroImage from "../assets/profile.jpg";
       onDeactivate: () => {
         navMenuToggle.setAttribute("aria-expanded", "false");
         document.body.classList.remove("overflow-hidden");
+        navMenuContent.classList.add("translate-y-4");
+      },
+      onPostActivate: () => {
+        window.setTimeout(() => {
+          navMenuContent.classList.remove("translate-y-4");
+          navMenuContent.classList.remove("opacity-0");
+        }, 50);
+      },
+      onPostDeactivate: () => {
+        navMenuContent.classList.add("translate-y-4");
+        navMenuContent.classList.add("opacity-0");
       },
     });
 
