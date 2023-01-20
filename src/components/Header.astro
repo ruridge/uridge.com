@@ -20,7 +20,7 @@ import heroImage from "../assets/profile.jpg";
       >{SITE_TITLE}</span
     >
   </a>
-  <nav class="flex">
+  <nav id="nav-menu" class="flex">
     <button
       id="nav-menu-toggle"
       aria-label="Toggle menu"
@@ -52,7 +52,6 @@ import heroImage from "../assets/profile.jpg";
       </svg>
     </button>
     <div
-      id="nav-menu"
       class="absolute inset-0 hidden flex-col justify-center gap-8 bg-black font-serif text-4xl font-bold tracking-wide text-slate-100 peer-aria-expanded:flex md:static md:flex md:flex-row md:bg-transparent md:font-sans md:text-base md:font-normal md:tracking-normal md:text-inherit"
     >
       <HeaderLink href="/">Home</HeaderLink>
@@ -70,14 +69,26 @@ import heroImage from "../assets/profile.jpg";
   </nav>
 
   <script>
+    import { createFocusTrap } from "focus-trap";
+
+    const navMenu = document.getElementById("nav-menu") as HTMLElement;
     const navMenuToggle = document.getElementById(
       "nav-menu-toggle"
     ) as HTMLButtonElement;
-    const navMenu = document.getElementById("nav-menu") as HTMLElement;
+
+    const trap = createFocusTrap(navMenu, {
+      onActivate: () => {
+        navMenuToggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("overflow-hidden");
+      },
+      onDeactivate: () => {
+        navMenuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("overflow-hidden");
+      },
+    });
 
     navMenuToggle.addEventListener("click", () => {
-      const expanded = navMenuToggle.getAttribute("aria-expanded") === "true";
-      navMenuToggle.setAttribute("aria-expanded", String(!expanded));
+      trap.active ? trap.deactivate() : trap.activate();
     });
   </script>
 </header>

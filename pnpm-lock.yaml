@@ -15,6 +15,7 @@ specifiers:
   eslint-plugin-astro: ^0.21.1
   eslint-plugin-jsx-a11y: ^6.7.1
   eslint-plugin-tailwindcss: ^3.8.0
+  focus-trap: ^7.2.0
   prettier: 2.8.2
   prettier-plugin-astro: ^0.7.2
   prettier-plugin-tailwindcss: ^0.2.1
@@ -31,6 +32,7 @@ dependencies:
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
   astro: 1.9.2
   astro-icon: 0.8.0
+  focus-trap: 7.2.0
   sharp: 0.31.3
   tailwindcss: 3.2.4
 
@@ -2436,6 +2438,12 @@ packages:
   /flatted/3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
+
+  /focus-trap/7.2.0:
+    resolution: {integrity: sha512-v4wY6HDDYvzkBy4735kW5BUEuw6Yz9ABqMYLuTNbzAFPcBOGiGHwwcNVMvUz4G0kgSYh13wa/7TG3XwTeT4O/A==}
+    dependencies:
+      tabbable: 6.0.1
+    dev: false
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -4959,6 +4967,10 @@ packages:
     dependencies:
       '@pkgr/utils': 2.3.1
       tslib: 2.4.1
+
+  /tabbable/6.0.1:
+    resolution: {integrity: sha512-SYJSIgeyXW7EuX1ytdneO5e8jip42oHWg9xl/o3oTYhmXusZVgiA+VlPvjIN+kHii9v90AmzTZEBcsEvuAY+TA==}
+    dev: false
 
   /tailwindcss/3.2.4:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
