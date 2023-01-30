@@ -87,19 +87,14 @@ import heroImage from "../assets/profile.jpg";
       onActivate: () => {
         navMenuToggle.setAttribute("aria-expanded", "true");
         document.body.classList.add("overflow-hidden");
-      },
-      onDeactivate: () => {
-        navMenuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("overflow-hidden");
-        navMenuContent.classList.add("translate-y-4");
-      },
-      onPostActivate: () => {
         window.setTimeout(() => {
           navMenuContent.classList.remove("translate-y-4");
           navMenuContent.classList.remove("opacity-0");
         }, 50);
       },
-      onPostDeactivate: () => {
+      onDeactivate: () => {
+        navMenuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("overflow-hidden");
         navMenuContent.classList.add("translate-y-4");
         navMenuContent.classList.add("opacity-0");
       },

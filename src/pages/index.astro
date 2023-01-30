@@ -1,10 +1,12 @@
 ---
+import { Image } from "@astrojs/image/components";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
 import Text from "@ui/Text.astro";
 
 const allWork = await Astro.glob("./work/*.md");
+const allPosts = await Astro.glob("./blog/*.md");
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -30,22 +32,52 @@ const allWork = await Astro.glob("./work/*.md");
     </p>
   </div>
   <h2
-    class="font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-white"
+    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-white"
   >
-    Featured Posts
+    Things I've Built
   </h2>
-  <br />
-  <div class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
+  <div
+    class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 sm:snap-none md:mx-0 md:px-0"
+  >
     {
       allWork.map((work) => (
-        <div class="">
+        <div class="w-80 flex-none snap-center snap-always">
           <a href={work.url}>
-            <img
+            <Image
               src={work.frontmatter.image.url}
               alt={work.frontmatter.image.alt}
               class="rounded-lg shadow"
+              width={390}
+              aspectRatio={1.5}
             />
             <Text as="span">{work.frontmatter.title}</Text>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+  <div class="block h-14"></div>
+  <h2
+    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-white"
+  >
+    Featured Posts
+  </h2>
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
+    {
+      allPosts.slice(0, 6).map((post) => (
+        <div class="">
+          <a href={post.url} class="group">
+            <Image
+              src={post.frontmatter.heroImage}
+              alt={post.frontmatter.description}
+              class="h-72 rounded-lg object-cover object-center shadow ring-violet-600 ring-offset-4 ring-offset-neutral-50 transition duration-300 group-hover:ring-4 dark:ring-offset-gray-900"
+              width={599}
+              aspectRatio={1}
+            />
+            <div class="mt-4 text-gray-700 dark:text-gray-300">
+              {post.frontmatter.pubDate}
+            </div>
+            <div class="mt-2 text-xl font-bold">{post.frontmatter.title}</div>
           </a>
         </div>
       ))
