@@ -6,7 +6,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.uridge.com",
+  site: "https://www.uridge.com/",
   integrations: [
     tailwind({ config: { applyBaseStyles: false } }),
     image({
