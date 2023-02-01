@@ -1,22 +1,25 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Text from "@components/ui/Text.astro";
 import Layout from "@layouts/Layout.astro";
 
-const allWork = await Astro.glob("./work/*.md");
+const allProjects = await Astro.glob("./projects/*.md");
 ---
 
 <Layout title="Work | Robert Uridge" description="">
-  <Text as="h1" size="h2">Work</Text>
+  <Text as="h1" size="h2">My Projects</Text>
   <br />
   <div class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
     {
-      allWork.map((work) => (
+      allProjects.map((work) => (
         <div class="">
           <a href={work.url}>
-            <img
+            <Image
               src={work.frontmatter.image.url}
               alt={work.frontmatter.image.alt}
               class="rounded-lg shadow"
+              width={390}
+              aspectRatio={1.5}
             />
             <Text as="span">{work.frontmatter.title}</Text>
           </a>

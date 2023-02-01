@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Layout from "./Layout.astro";
 import Text from "@ui/Text.astro";
 
@@ -10,6 +11,11 @@ const { frontmatter } = Astro.props;
   <Text>{frontmatter.pubDate.slice(0, 10)}</Text>
   <Text><em>{frontmatter.description}</em></Text>
   <Text>Written by {frontmatter.author}</Text>
-  <img alt={frontmatter.image.alt} src={frontmatter.image.url} width="300" />
+  <Image
+    alt={frontmatter.image.alt}
+    src={frontmatter.image.url}
+    width={390}
+    aspectRatio={1.5}
+  />
   <slot />
 </Layout>

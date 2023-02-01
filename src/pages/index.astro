@@ -5,8 +5,9 @@ import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
 import Text from "@ui/Text.astro";
 
-const allWork = await Astro.glob("./work/*.md");
+const allProjects = await Astro.glob("./projects/*.md");
 const allPosts = await Astro.glob("./blog/*.md");
+const recentPosts = [...allPosts, ...allPosts].slice(0, 6);
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -15,7 +16,7 @@ const allPosts = await Astro.glob("./blog/*.md");
       class="font-serif text-4xl font-bold tracking-tight sm:text-8xl sm:font-normal"
     >
       <a
-        href="/work"
+        href="/projects"
         class="animate-bg-slide bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-[length:400%] bg-clip-text bg-right text-transparent transition-all duration-700 hover:bg-[length:100%]"
         >I make web apps.</a
       >
@@ -32,7 +33,7 @@ const allPosts = await Astro.glob("./blog/*.md");
     </p>
   </div>
   <h2
-    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-white"
+    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100"
   >
     Things I've Built
   </h2>
@@ -40,14 +41,14 @@ const allPosts = await Astro.glob("./blog/*.md");
     class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 sm:snap-none md:mx-0 md:px-0"
   >
     {
-      allWork.map((work) => (
-        <div class="w-80 flex-none snap-center snap-always">
+      allProjects.map((work) => (
+        <div class="flex-none snap-center snap-always">
           <a href={work.url}>
             <Image
               src={work.frontmatter.image.url}
               alt={work.frontmatter.image.alt}
-              class="rounded-lg shadow"
-              width={390}
+              class="w-80 rounded-lg shadow"
+              width={320}
               aspectRatio={1.5}
             />
             <Text as="span">{work.frontmatter.title}</Text>
@@ -58,13 +59,13 @@ const allPosts = await Astro.glob("./blog/*.md");
   </div>
   <div class="block h-14"></div>
   <h2
-    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-white"
+    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100"
   >
-    Featured Posts
+    Recent Posts
   </h2>
   <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
     {
-      allPosts.slice(0, 6).map((post) => (
+      recentPosts.map((post) => (
         <div class="">
           <a href={post.url} class="group">
             <Image
