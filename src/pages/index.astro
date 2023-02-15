@@ -3,7 +3,6 @@ import { Image } from "@astrojs/image/components";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
-import Text from "@ui/Text.astro";
 
 const allProjects = await Astro.glob("./projects/*.md");
 const allPosts = await Astro.glob("./blog/*.md");
@@ -17,7 +16,7 @@ const recentPosts = [...allPosts, ...allPosts].slice(0, 6);
     >
       <a
         href="/projects"
-        class="animate-bg-slide bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-[length:400%] bg-clip-text bg-right text-transparent transition-all duration-700 hover:bg-[length:100%]"
+        class="animate-bg-slide bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-[length:400%] bg-clip-text bg-right text-transparent transition-[background] hover:bg-[length:100%]"
         >I make web apps.</a
       >
     </h1>
@@ -33,31 +32,35 @@ const recentPosts = [...allPosts, ...allPosts].slice(0, 6);
     </p>
   </div>
   <h2
-    class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100"
+    class="mb-5 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100"
   >
     Things I've Built
   </h2>
   <div
-    class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 sm:snap-none md:mx-0 md:px-0"
+    class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto py-3 px-5 sm:snap-none md:mx-0 md:px-0"
   >
     {
-      allProjects.map((work) => (
-        <div class="flex-none snap-center snap-always">
-          <a href={work.url}>
-            <Image
-              src={work.frontmatter.image.url}
-              alt={work.frontmatter.image.alt}
-              class="w-80 rounded-lg shadow"
-              width={320}
-              aspectRatio={1.5}
-            />
-            <Text as="span">{work.frontmatter.title}</Text>
+      allProjects.map((work) => {
+        return (
+          <a
+            href={work.url}
+            class="bg-gradient-45 ease-out-quint group flex w-72 flex-none snap-center snap-always rounded-lg from-[rgb(124,58,237)] via-[#da62c4_30%] to-[white_60%] bg-[length:400%] bg-right p-0.5 shadow-md transition-[background-position] duration-500 focus-within:bg-left hover:bg-left dark:to-[transparent_60%]"
+          >
+            <div class="flex h-full w-full flex-col rounded-md bg-white py-4 px-5 text-neutral-900 group-hover:text-purple-600 group-hover:transition-[color] dark:bg-slate-800 md:opacity-80">
+              <h2 class="text-xl dark:text-white">{work.frontmatter.title}</h2>
+              <p class="mt-2 flex-1 text-gray-600 dark:text-gray-300">
+                {work.frontmatter.description}
+              </p>
+              <div class="text-right text-xl transition-transform group-hover:translate-x-1 dark:text-white">
+                &rarr;
+              </div>
+            </div>
           </a>
-        </div>
-      ))
+        );
+      })
     }
   </div>
-  <div class="block h-14"></div>
+  <div class="block h-11"></div>
   <h2
     class="mb-8 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100"
   >

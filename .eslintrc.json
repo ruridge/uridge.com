@@ -24,9 +24,6 @@
       "config": "./tailwind.config.cjs"
     }
   },
-  "rules": {
-    "tailwindcss/classnames-order": "off"
-  },
   "overrides": [
     {
       "files": ["*.astro"],

@@ -1,40 +1,36 @@
 ---
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
   iconBefore?: string;
-  iconAfter?: string;
 }
 
 import { Icon } from "astro-icon";
 
-const { href, iconBefore, iconAfter } = Astro.props;
-
+const { href, iconBefore } = Astro.props;
 const { pathname } = Astro.url;
 
 const isActive =
   String(href) === "/" ? pathname === "/" : pathname.startsWith(String(href));
+
+const activeClasses = isActive
+  ? "scale-x-[.37] bg-blue-400 md:scale-x-100"
+  : "scale-x-0 bg-gray-500 md:bg-neutral-150 dark:md:bg-gray-800";
 ---
 
-<a
-  href={href}
-  class:list={[
-    "relative flex after:absolute md:after:-bottom-0 after:-bottom-2 after:h-2.5 md:after:h-1.5 after:w-full after:origin-left after:transition-transform after:duration-300 md:hover:after:scale-100 hover:after:scale-x-[.37] px-[15%] md:px-0 after:-left-[15%] md:after:left-0",
-    isActive
-      ? "after:bg-blue-400 after:scale-x-[.37] md:after:scale-x-100"
-      : "after:bg-gray-500 md:after:bg-neutral-150 dark:md:after:bg-gray-800 after:scale-x-0",
-  ]}
->
+<a href={href} class="group relative flex max-md:px-[15%]">
   <span class="flex items-center gap-3 md:gap-1">
     {
       iconBefore && (
         <Icon
           name={iconBefore}
-          class="-ml-8 h-5 text-gray-300 md:ml-0 md:h-4 md:text-inherit"
+          class="h-5 max-md:-ml-8 max-md:text-gray-300 md:h-4"
         />
       )
     }
     <span>
       <slot />
     </span>
-    {iconAfter && <Icon name={iconAfter} class="h-4" />}
   </span>
+  <span
+    class={`absolute -bottom-2 h-2.5 w-full origin-left transition-none duration-300 group-hover:scale-x-[.37] group-hover:transition-transform max-md:left-[-15%] md:bottom-0 md:h-1.5 md:group-hover:scale-100 ${activeClasses}`}
+  ></span>
 </a>

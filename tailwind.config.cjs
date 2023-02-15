@@ -19,6 +19,15 @@ module.exports = {
           to: { backgroundPosition: "100% 0" },
         },
       },
+      transitionTimingFunction: {
+        "out-quint": "cubic-bezier(0.22, 1, 0.36, 1)",
+      },
+      transitionDuration: {
+        600: "600ms",
+      },
+      backgroundImage: {
+        "gradient-45": "linear-gradient(45deg, var(--tw-gradient-stops))",
+      },
     },
   },
   plugins: [],
