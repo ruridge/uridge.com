@@ -1,8 +1,7 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "Sanity top tip: the Grandma test"
+title: "I Migrated from a Postgres Cluster to Distributed SQLite with LiteFS"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 22 2022"
+pubDate: 2022-07-15
 heroImage: "/placeholder-hero.jpg"
 ---
 

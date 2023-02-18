@@ -1,6 +1,5 @@
 ---
-layout: "@layouts/WorkLayout.astro"
-title: "Minesweeper in React"
+title: "Neon Light CSS"
 pubDate: 2022-07-01
 description: "This is the first post of my new Astro blog."
 author: "Robert Uridge"

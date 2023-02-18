@@ -1,11 +1,10 @@
 ---
-layout: "@layouts/WorkLayout.astro"
-title: "React Native One Thing App"
+title: "Minesweeper in React"
 pubDate: 2022-07-01
-description: "This is the writeup of my React Native todo app project."
+description: "This is the first post of my new Astro blog."
 author: "Robert Uridge"
 image:
-  url: "https://picsum.photos/seed/work2/536/354.jpg"
+  url: "https://picsum.photos/seed/work1/536/354.jpg"
   alt: "The Astro logo with the word One."
 tags: ["astro", "blogging", "learning in public"]
 ---

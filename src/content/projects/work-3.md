@@ -1,12 +1,11 @@
 ---
-layout: "@layouts/WorkLayout.astro"
-title: "React Flip Card"
+title: "NextJS People App"
 pubDate: 2022-07-01
-description: "This is the first post of my new Astro blog."
+description: "This is a continuation of a work assessment I was given."
 author: "Robert Uridge"
 image:
-  url: "https://picsum.photos/seed/work1/536/354.jpg"
-  alt: "The Astro logo with the word One."
+  url: "https://picsum.photos/seed/work3/536/354.jpg"
+  alt: ""
 tags: ["astro", "blogging", "learning in public"]
 ---
 

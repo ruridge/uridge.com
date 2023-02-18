@@ -1,34 +1,25 @@
 ---
 import Layout from "./Layout.astro";
-
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
-}
-
-const {
-  content: { title, description, pubDate, updatedDate, heroImage },
-} = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={frontmatter.title} description={frontmatter.description}>
   <article>
-    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-    <h1 class="mt-1 text-3xl">{title}</h1>
-    {pubDate && <time>{pubDate}</time>}
     {
-      updatedDate && (
+      frontmatter.heroImage && (
+        <img width={720} height={360} src={frontmatter.heroImage} alt="" />
+      )
+    }
+    <h1 class="mt-1 text-3xl">{frontmatter.title}</h1>
+    {frontmatter.pubDate && <time>{frontmatter.pubDate}</time>}
+    {
+      frontmatter.updatedDate && (
         <div>
-          Last updated on <time>{updatedDate}</time>
+          Last updated on <time>{frontmatter.updatedDate}</time>
         </div>
       )
     }
-    <hr class="border-neutral-200 my-4 border-t" />
+    <hr class="my-4 border-t border-neutral-200" />
     <div class="markdown">
       <slot />
     </div>

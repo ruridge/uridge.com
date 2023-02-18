@@ -1,36 +1,31 @@
 ---
+import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
-);
-
-console.log(posts);
+const allPosts = await getCollection("blog");
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <section>
     <ul>
       {
-        posts.map((post) => (
+        allPosts.map((post) => (
           <li class="flex">
             <time
-              datetime={post.frontmatter.pubDate}
+              datetime={post.data.pubDate}
               class="basis-32 italic text-yellow-900"
             >
-              {new Date(post.frontmatter.pubDate).toLocaleDateString("en-us", {
+              {new Date(post.data.pubDate).toLocaleDateString("en-us", {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
               })}
             </time>
-            <Link href={post.url} class="visited:text-purple-700">
-              {post.frontmatter.title}
+            <Link href={"/blog/" + post.slug} class="visited:text-purple-700">
+              {post.data.title}
             </Link>
           </li>
         ))

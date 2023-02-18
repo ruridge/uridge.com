@@ -1,27 +1,30 @@
 ---
+import { getCollection } from "astro:content";
 import { Image } from "@astrojs/image/components";
 import Text from "@components/ui/Text.astro";
 import Layout from "@layouts/Layout.astro";
 
-const allProjects = await Astro.glob("./projects/*.md");
+const pageTitle = "Projects | Robert Uridge";
+const pageDescription = "A collection of projects I've worked on.";
+const allProjects = await getCollection("projects");
 ---
 
-<Layout title="Work | Robert Uridge" description="">
+<Layout title={pageTitle} description={pageDescription}>
   <Text as="h1" size="h2">My Projects</Text>
   <br />
   <div class="grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] gap-4">
     {
-      allProjects.map((work) => (
+      allProjects.map((project) => (
         <div class="">
-          <a href={work.url}>
+          <a href={"/projects/" + project.slug}>
             <Image
-              src={work.frontmatter.image.url}
-              alt={work.frontmatter.image.alt}
+              src={project.data.image.url}
+              alt={project.data.image.alt}
               class="rounded-lg shadow"
               width={390}
               aspectRatio={1.5}
             />
-            <Text as="span">{work.frontmatter.title}</Text>
+            <Text as="span">{project.data.title}</Text>
           </a>
         </div>
       ))

@@ -1,8 +1,7 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "Revolutionizing Visual Content Creation with Sanity.io and OpenAI"
+title: "Sanity top tip: the Grandma test"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 08 2022"
+pubDate: 2022-07-22
 heroImage: "/placeholder-hero.jpg"
 ---
 

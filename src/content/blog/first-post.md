@@ -1,8 +1,7 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "I Migrated from a Postgres Cluster to Distributed SQLite with LiteFS"
+title: "Revolutionizing Visual Content Creation with Sanity.io and OpenAI"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 15 2022"
+pubDate: 2022-07-08
 heroImage: "/placeholder-hero.jpg"
 ---
 
