@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "preact/hooks";
 import { useStore } from "@nanostores/preact";
-import { theme, themes } from "../stores/theme";
+import { theme, THEMES } from "../stores/theme";
 
 // update dark mode class and theme color
 function update() {
@@ -25,6 +25,7 @@ function useTheme() {
   const $theme = useStore(theme);
   const initial = useRef(true);
 
+  // set initial app theme from localStorage
   useEffect(() => {
     const localTheme = localStorage.theme;
     if (localTheme === "light" || localTheme === "dark") {
@@ -34,6 +35,7 @@ function useTheme() {
     }
   }, []);
 
+  // sync localStorage with app theme when it changes
   useEffect(() => {
     if ($theme === "auto") {
       localStorage.removeItem("theme");
@@ -47,6 +49,17 @@ function useTheme() {
     }
   }, [$theme]);
 
+  // update app theme when system theme changes
+  useEffect(() => {
+    let mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    mediaQuery.addEventListener("change", update);
+
+    return () => {
+      mediaQuery.removeEventListener("change", update);
+    };
+  }, []);
+
   return [$theme, theme.set] as const;
 }
 
@@ -55,7 +68,7 @@ export function ThemeToggle() {
 
   return (
     <div className="inline-flex rounded-full border border-[#0071e3] p-[1px]">
-      {themes.map((t) => {
+      {THEMES.map((t) => {
         const isActive = t === theme;
         return (
           <label key={t} htmlFor={t}>
