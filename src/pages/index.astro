@@ -79,9 +79,18 @@ const recentPosts = [...allPosts].slice(0, 6);
               width={599}
               aspectRatio={1}
             />
-            <div class="mt-4 text-gray-700 dark:text-gray-300">
-              {post.data.pubDate}
-            </div>
+            <time
+              datetime={post.data.pubDate.toDateString()}
+              class="mt-4 block italic text-gray-700 dark:text-gray-400"
+            >
+              <span>
+                {new Date(post.data.pubDate).toLocaleDateString("en-gb", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+            </time>
             <div class="mt-2 text-xl font-bold">{post.data.title}</div>
           </a>
         </div>

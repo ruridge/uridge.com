@@ -13,18 +13,18 @@
     "lint": "eslint src --cache --cache-strategy content"
   },
   "dependencies": {
-    "@astrojs/image": "^0.15.0",
-    "@astrojs/mdx": "^0.17.0",
+    "@astrojs/image": "^0.15.1",
+    "@astrojs/mdx": "^0.17.2",
     "@astrojs/preact": "^2.0.3",
     "@astrojs/rss": "^2.1.1",
-    "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/sitemap": "^1.1.0",
     "@astrojs/tailwind": "^3.0.1",
     "@nanostores/preact": "^0.3.1",
-    "astro": "^2.0.14",
+    "astro": "^2.0.15",
     "astro-icon": "^0.8.0",
     "focus-trap": "^7.3.1",
     "nanostores": "^0.7.4",
-    "preact": "^10.12.1",
+    "preact": "^10.13.0",
     "sharp": "^0.31.3",
     "tailwindcss": "^3.2.7"
   },

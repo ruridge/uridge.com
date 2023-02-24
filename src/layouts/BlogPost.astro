@@ -1,17 +1,55 @@
 ---
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
-  <article>
+  <article class="mx-auto max-w-xl">
     {
       frontmatter.heroImage && (
-        <img width={720} height={360} src={frontmatter.heroImage} alt="" />
+        <Image
+          width={720}
+          height={360}
+          src={frontmatter.heroImage}
+          alt=""
+          class=" absolute inset-x-0 top-0 -z-10 h-48 w-full object-cover sm:h-64"
+        />
       )
     }
-    <h1 class="mt-1 text-3xl">{frontmatter.title}</h1>
-    {frontmatter.pubDate && <time>{frontmatter.pubDate}</time>}
+    <h1 class="mt-32 mb-4 font-serif text-3xl">
+      {frontmatter.title}
+    </h1>
+    <p class="text-base text-slate-700 dark:text-gray-400">
+      {frontmatter.description}
+    </p>
+    <hr class="my-4 border-t border-neutral-300 dark:border-gray-800" />
+    <div class="mb-8 flex gap-4">
+      {
+        frontmatter.pubDate && (
+          <time
+            datetime={frontmatter.pubDate.toDateString()}
+            class="flex items-center gap-0.5 text-sm italic text-slate-700 dark:text-gray-400"
+          >
+            <Icon name="mdi:calendar-today" class="mr-1 inline-block h-4 w-4" />
+            <span>
+              {new Date(frontmatter.pubDate).toLocaleDateString("en-gb", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          </time>
+        )
+      }
+      <div
+        class="flex items-center gap-0.5 text-sm italic text-slate-700 dark:text-gray-400"
+      >
+        <Icon name="mdi:access-time" class="mr-1 inline-block h-4 w-4" />
+        <span>12 min</span>
+      </div>
+    </div>
     {
       frontmatter.updatedDate && (
         <div>
@@ -19,7 +57,6 @@ const { frontmatter } = Astro.props;
         </div>
       )
     }
-    <hr class="my-4 border-t border-neutral-200" />
     <div class="markdown">
       <slot />
     </div>

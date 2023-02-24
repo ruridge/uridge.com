@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
+import Text from "@ui/Text.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 // const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
@@ -14,16 +15,21 @@ const allPosts = await getCollection("blog");
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Text as="h1" size="h2">Blog</Text>
+  <Text as="h2" size="h3">
+    A collection of my writing, useful tips, and code snippets.
+  </Text>
+  <br />
   <section>
     <ul>
       {
         allPosts.map((post) => (
           <li class="flex">
             <time
-              datetime={post.data.pubDate}
+              datetime={post.data.pubDate.toDateString()}
               class="basis-32 italic text-yellow-900"
             >
-              {new Date(post.data.pubDate).toLocaleDateString("en-us", {
+              {new Date(post.data.pubDate).toLocaleDateString("en-gb", {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
