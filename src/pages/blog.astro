@@ -5,6 +5,11 @@ import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
+// const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+//   (a, b) =>
+//     new Date(b.frontmatter.pubDate).valueOf() -
+//     new Date(a.frontmatter.pubDate).valueOf()
+// );
 const allPosts = await getCollection("blog");
 ---
 

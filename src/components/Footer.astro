@@ -1,10 +1,17 @@
 ---
 import { SITE_TITLE } from "src/config";
 import Link from "@ui/Link.astro";
+import { ThemeToggle } from "@components/ThemeToggle";
 const today = new Date();
 ---
 
-<footer class="p-6 text-center">
-  &copy; {today.getFullYear()}
-  <Link href="https://www.uridge.com">{SITE_TITLE}</Link>
+<footer class="relative p-6 text-center">
+  Copyright &copy; {today.getFullYear()}
+  <Link href="https://www.uridge.com">{SITE_TITLE}</Link>.
+  <div class="absolute right-0 top-0 pt-6">
+    <!-- <ThemeToggle client:media="(min-width: 768px)" /> -->
+    <div class="max-md:hidden">
+      <ThemeToggle client:load />
+    </div>
+  </div>
 </footer>

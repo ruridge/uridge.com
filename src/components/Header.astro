@@ -2,6 +2,7 @@
 import { Image } from "@astrojs/image/components";
 import HeaderLink from "./HeaderLink.astro";
 import heroImage from "../assets/profile.jpg";
+import { ThemeToggle } from "./ThemeToggle";
 ---
 
 <header class="my-4 flex justify-between sm:my-12">
@@ -69,19 +70,23 @@ import heroImage from "../assets/profile.jpg";
           Source
         </HeaderLink>
       </div>
+      <div class="absolute bottom-0 md:hidden">
+        <!-- <ThemeToggle client:media="not all and (min-width: 768px)" /> -->
+        <ThemeToggle client:load />
+      </div>
     </div>
   </nav>
 
   <script>
     import { createFocusTrap } from "focus-trap";
 
-    const navMenu = document.getElementById("nav-menu") as HTMLElement;
-    const navMenuToggle = document.getElementById(
-      "nav-menu-toggle"
-    ) as HTMLButtonElement;
-    const navMenuContent = document.getElementById(
-      "nav-menu-content"
-    ) as HTMLElement;
+    const navMenu = document.getElementById("nav-menu");
+    const navMenuToggle = document.getElementById("nav-menu-toggle");
+    const navMenuContent = document.getElementById("nav-menu-content");
+
+    if (!navMenu || !navMenuToggle || !navMenuContent) {
+      throw new Error("Missing nav menu elements");
+    }
 
     const trap = createFocusTrap(navMenu, {
       onActivate: () => {

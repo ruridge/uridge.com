@@ -16,7 +16,7 @@
     }
   }
 
-  html {
+  body {
     @apply bg-neutral-50 text-slate-900 selection:bg-purple-200 selection:text-purple-500 dark:bg-gray-900 dark:text-slate-50 dark:selection:bg-purple-100 dark:selection:text-slate-900;
   }
   /*

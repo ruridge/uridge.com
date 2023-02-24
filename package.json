@@ -13,29 +13,33 @@
     "lint": "eslint src --cache --cache-strategy content"
   },
   "dependencies": {
-    "@astrojs/image": "^0.14.1",
-    "@astrojs/mdx": "^0.16.0",
-    "@astrojs/rss": "^2.1.0",
+    "@astrojs/image": "^0.15.0",
+    "@astrojs/mdx": "^0.17.0",
+    "@astrojs/preact": "^2.0.3",
+    "@astrojs/rss": "^2.1.1",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/tailwind": "^3.0.1",
-    "astro": "^2.0.11",
+    "@nanostores/preact": "^0.3.1",
+    "astro": "^2.0.14",
     "astro-icon": "^0.8.0",
-    "focus-trap": "^7.2.0",
+    "focus-trap": "^7.3.1",
+    "nanostores": "^0.7.4",
+    "preact": "^10.12.1",
     "sharp": "^0.31.3",
-    "tailwindcss": "^3.2.6"
+    "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-tailwindcss": "^3.8.3",
+    "eslint-plugin-tailwindcss": "^3.9.0",
     "prettier": "2.8.4",
     "prettier-plugin-astro": "^0.8.0",
-    "prettier-plugin-tailwindcss": "^0.2.2",
-    "rollup": "^3.15.0",
+    "prettier-plugin-tailwindcss": "^0.2.3",
+    "rollup": "^3.17.2",
     "typescript": "^4.9.5"
   }
 }

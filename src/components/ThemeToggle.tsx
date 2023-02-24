@@ -1,52 +1,57 @@
-const themes = ["light", "dark", "auto"] as const;
-type Theme = (typeof themes)[number];
+import { useEffect, useRef } from "preact/hooks";
+import { useStore } from "@nanostores/preact";
+import { theme, themes } from "../stores/theme";
 
+// update dark mode class and theme color
 function update() {
-  const { classList } = document.documentElement;
-  classList.remove(...themes);
-
   if (
     localStorage.theme === "dark" ||
     (!("theme" in localStorage) &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
-    classList.add("dark");
+    document.documentElement.classList.add("dark");
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", "#0B1120");
   } else {
-    classList.remove("dark");
+    document.documentElement.classList.remove("dark");
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", "#f8fafc");
   }
 }
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme | null>(() => {
-    if (import.meta.env.SSR) return null;
-    if (localStorage.theme === "dark") return "dark";
-    if (localStorage.theme === "light") return "light";
-    return "auto";
-  });
+function useTheme() {
+  const $theme = useStore(theme);
+  const initial = useRef(true);
 
   useEffect(() => {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      ?.addEventListener("change", update);
+    const localTheme = localStorage.theme;
+    if (localTheme === "light" || localTheme === "dark") {
+      theme.set(localTheme);
+    } else {
+      theme.set("auto");
+    }
   }, []);
 
   useEffect(() => {
-    update();
-  }, [theme]);
-
-  function handleThemeChange(newTheme: Theme) {
-    if (newTheme === "light") {
-      // Whenever the user explicitly chooses light mode
-      localStorage.theme = "light";
-    } else if (newTheme === "dark") {
-      // Whenever the user explicitly chooses dark mode
-      localStorage.theme = "dark";
-    } else if (newTheme === "auto") {
-      // Whenever the user explicitly chooses to respect the OS preference
+    if ($theme === "auto") {
       localStorage.removeItem("theme");
+    } else if ($theme === "light" || $theme === "dark") {
+      localStorage.theme = $theme;
     }
-    setTheme(newTheme);
-  }
+    if (initial.current) {
+      initial.current = false;
+    } else {
+      update();
+    }
+  }, [$theme]);
+
+  return [$theme, theme.set] as const;
+}
+
+export function ThemeToggle() {
+  const [theme, setTheme] = useTheme();
 
   return (
     <div className="inline-flex rounded-full border border-[#0071e3] p-[1px]">
@@ -61,7 +66,7 @@ export function ThemeToggle() {
               name="theme-toggle"
               value={t}
               autoComplete="off"
-              onChange={() => handleThemeChange(t)}
+              onChange={() => setTheme(t)}
             ></input>
             <div
               className={`min-w-[42px] rounded-full border py-[1px] px-2 text-center text-xs capitalize  ${
