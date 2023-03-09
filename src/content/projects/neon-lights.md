@@ -4,7 +4,7 @@ pubDate: 2022-07-01
 description: "This is the first post of my new Astro blog."
 author: "Robert Uridge"
 image:
-  url: "https://picsum.photos/seed/work1/536/354.jpg"
+  url: "https://picsum.photos/seed/neon-lights/536/354.jpg"
   alt: "The Astro logo with the word One."
 tags: ["astro", "blogging", "learning in public"]
 ---

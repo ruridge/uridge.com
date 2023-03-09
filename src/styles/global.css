@@ -15,10 +15,6 @@
       --color-primary: 112 64 255;
     }
   }
-
-  body {
-    @apply bg-neutral-50 text-slate-900 selection:bg-purple-200 selection:text-purple-500 dark:bg-gray-900 dark:text-slate-50 dark:selection:bg-purple-100 dark:selection:text-slate-900;
-  }
   /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css

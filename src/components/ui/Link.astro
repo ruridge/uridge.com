@@ -1,7 +1,9 @@
 ---
-export type Props = astroHTML.JSX.AnchorHTMLAttributes;
+import type { HTMLAttributes } from "astro/types";
 
-const { href, class: className, ...rest } = Astro.props;
+export type Props = HTMLAttributes<"a">;
+
+const { href, class: className, ...attrs } = Astro.props;
 const slot = await Astro.slots.render("default");
 ---
 
@@ -12,6 +14,6 @@ const slot = await Astro.slots.render("default");
     Astro.props["class:list"],
     className,
   ]}
-  {...rest}
+  {...attrs}
   set:html={slot}
 />

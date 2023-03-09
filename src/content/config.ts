@@ -7,6 +7,11 @@ const blogCollection = defineCollection({
     pubDate: z.date(),
     description: z.string(),
     heroImage: z.string(),
+    image: z.object({
+      url: z.string(),
+      alt: z.string(),
+    }),
+    draft: z.optional(z.boolean()),
   }),
 });
 const projectsCollection = defineCollection({

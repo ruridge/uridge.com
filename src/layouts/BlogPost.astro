@@ -8,17 +8,19 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title} description={frontmatter.description}>
   <article class="mx-auto max-w-xl">
     {
-      frontmatter.heroImage && (
-        <Image
-          width={720}
-          height={360}
-          src={frontmatter.heroImage}
-          alt=""
-          class=" absolute inset-x-0 top-0 -z-10 h-48 w-full object-cover sm:h-64"
-        />
+      frontmatter.image.url && (
+        <div class="relative inset-x-1/2 mx-[-50vw] w-screen">
+          <Image
+            width={720}
+            height={360}
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            class="h-48 w-full object-cover sm:h-64"
+          />
+        </div>
       )
     }
-    <h1 class="mt-32 mb-4 font-serif text-3xl">
+    <h1 class="my-4 font-serif text-3xl">
       {frontmatter.title}
     </h1>
     <p class="text-base text-slate-700 dark:text-gray-400">

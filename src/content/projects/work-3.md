@@ -4,7 +4,7 @@ pubDate: 2022-07-01
 description: "This is a continuation of a work assessment I was given."
 author: "Robert Uridge"
 image:
-  url: "https://picsum.photos/seed/work3/536/354.jpg"
+  url: "https://picsum.photos/seed/work-3/536/354.jpg"
   alt: ""
 tags: ["astro", "blogging", "learning in public"]
 ---

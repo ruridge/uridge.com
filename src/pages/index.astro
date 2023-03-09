@@ -6,7 +6,9 @@ import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
 
 const allProjects = await getCollection("projects");
-const allPosts = await getCollection("blog");
+const allPosts = await getCollection("blog", ({ data }) => {
+  return data.draft !== true;
+});
 const recentPosts = [...allPosts].slice(0, 6);
 ---
 
@@ -41,18 +43,18 @@ const recentPosts = [...allPosts].slice(0, 6);
     class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto py-3 px-5 sm:snap-none md:mx-0 md:px-0"
   >
     {
-      allProjects.map((project) => {
+      allProjects.map(({ slug, data }) => {
         return (
           <a
-            href={"/projects/" + project.slug}
-            class="bg-gradient-45 ease-out-quint group flex w-72 flex-none snap-center snap-always rounded-lg from-[rgb(124,58,237)] via-[#da62c4_30%] to-[white_60%] bg-[length:400%] bg-right p-0.5 shadow-md transition-[background-position] duration-500 focus-within:bg-left hover:bg-left dark:to-[transparent_60%]"
+            href={"/projects/" + slug}
+            class="bg-gradient-45 ease-out-quint group flex w-72 flex-none snap-center snap-always rounded-lg from-[rgb(124,58,237)] via-[#da62c4_30%] to-[#f4f4f5_60%] bg-[length:400%] bg-right p-0.5 shadow-md transition-[background-position] duration-500 focus-within:bg-left hover:bg-left dark:to-[transparent_60%]"
           >
-            <div class="flex h-full w-full flex-col rounded-md bg-white py-4 px-5 text-neutral-900 group-hover:text-purple-600 group-hover:transition-[color] dark:bg-slate-800 md:opacity-80">
-              <h2 class="text-xl dark:text-white">{project.data.title}</h2>
-              <p class="mt-2 flex-1 text-gray-600 dark:text-gray-300">
-                {project.data.description}
-              </p>
-              <div class="text-right text-xl transition-transform group-hover:translate-x-1 dark:text-white">
+            <div class="flex h-full w-full flex-col rounded-md bg-zinc-100/80 py-4 px-5 dark:bg-slate-800/80">
+              <h2 class="text-xl text-black transition-[color] group-hover:text-purple-600 dark:text-white dark:group-hover:text-white">
+                {data.title}
+              </h2>
+              <p class="mt-2 flex-1 dark:text-gray-300">{data.description}</p>
+              <div class="text-right text-xl transition-[transform_color] group-hover:translate-x-1 group-hover:text-purple-600 dark:text-white dark:group-hover:text-white">
                 &rarr;
               </div>
             </div>
@@ -69,29 +71,29 @@ const recentPosts = [...allPosts].slice(0, 6);
   </h2>
   <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
     {
-      recentPosts.map((post) => (
+      recentPosts.map(({ slug, data }) => (
         <div class="">
-          <a href={"/blog/" + post.slug} class="group">
+          <a href={"/blog/" + slug} class="group">
             <Image
-              src={post.data.heroImage}
-              alt={post.data.description}
+              src={data.image.url}
+              alt={data.image.alt}
               class="h-72 rounded-lg object-cover object-center shadow ring-violet-600 ring-offset-4 ring-offset-neutral-50 transition duration-300 group-hover:ring-4 dark:ring-offset-gray-900"
-              width={599}
-              aspectRatio={1}
+              width={384 * 3}
+              height={384 * 3}
             />
             <time
-              datetime={post.data.pubDate.toDateString()}
+              datetime={data.pubDate.toDateString()}
               class="mt-4 block italic text-gray-700 dark:text-gray-400"
             >
               <span>
-                {new Date(post.data.pubDate).toLocaleDateString("en-gb", {
+                {new Date(data.pubDate).toLocaleDateString("en-gb", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
               </span>
             </time>
-            <div class="mt-2 text-xl font-bold">{post.data.title}</div>
+            <div class="mt-2 text-xl font-bold">{data.title}</div>
           </a>
         </div>
       ))

@@ -76,37 +76,37 @@ import { ThemeToggle } from "./ThemeToggle";
       </div>
     </div>
   </nav>
-
-  <script>
-    import { createFocusTrap } from "focus-trap";
-
-    const navMenu = document.getElementById("nav-menu");
-    const navMenuToggle = document.getElementById("nav-menu-toggle");
-    const navMenuContent = document.getElementById("nav-menu-content");
-
-    if (!navMenu || !navMenuToggle || !navMenuContent) {
-      throw new Error("Missing nav menu elements");
-    }
-
-    const trap = createFocusTrap(navMenu, {
-      onActivate: () => {
-        navMenuToggle.setAttribute("aria-expanded", "true");
-        document.body.classList.add("overflow-hidden");
-        window.setTimeout(() => {
-          navMenuContent.classList.remove("max-md:translate-y-4");
-          navMenuContent.classList.remove("opacity-0");
-        }, 50);
-      },
-      onDeactivate: () => {
-        navMenuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("overflow-hidden");
-        navMenuContent.classList.add("max-md:translate-y-4");
-        navMenuContent.classList.add("opacity-0");
-      },
-    });
-
-    navMenuToggle.addEventListener("click", () => {
-      trap.active ? trap.deactivate() : trap.activate();
-    });
-  </script>
 </header>
+
+<script>
+  import { createFocusTrap } from "focus-trap";
+
+  const navMenu = document.getElementById("nav-menu");
+  const navMenuToggle = document.getElementById("nav-menu-toggle");
+  const navMenuContent = document.getElementById("nav-menu-content");
+
+  if (!navMenu || !navMenuToggle || !navMenuContent) {
+    throw new Error("Missing nav menu elements");
+  }
+
+  const trap = createFocusTrap(navMenu, {
+    onActivate: () => {
+      navMenuToggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("overflow-hidden");
+      window.setTimeout(() => {
+        navMenuContent.classList.remove("max-md:translate-y-4");
+        navMenuContent.classList.remove("opacity-0");
+      }, 50);
+    },
+    onDeactivate: () => {
+      navMenuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("overflow-hidden");
+      navMenuContent.classList.add("max-md:translate-y-4");
+      navMenuContent.classList.add("opacity-0");
+    },
+  });
+
+  navMenuToggle.addEventListener("click", () => {
+    trap.active ? trap.deactivate() : trap.activate();
+  });
+</script>
