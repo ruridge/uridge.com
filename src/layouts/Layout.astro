@@ -51,6 +51,9 @@ const today = new Date();
 
     <!-- PWA -->
     <meta name="theme-color" content="#f8fafc" />
+
+    <link rel="me" href="https://social.treehouse.systems/@rob" />
+
     <script is:inline>
       // run inline (to avoid FOUC)
       // on page load: add "dark" class to the html element)
@@ -69,23 +72,124 @@ const today = new Date();
   <body
     class="flex flex-col items-stretch break-words bg-white text-zinc-900 dark:bg-zinc-900 dark:text-neutral-50"
   >
-    <div class="mx-auto w-full max-w-7xl px-5 md:px-10">
+    <div class="mx-auto w-full max-w-7xl px-5 md:px-6">
       <Header />
     </div>
-    <main class="mx-auto w-full max-w-7xl flex-1 px-5 md:px-10">
+    <main class="mx-auto w-full max-w-7xl flex-1 px-5 md:px-6">
       <slot />
     </main>
-    <div class="px-5 md:px-10">
-      <footer class="relative p-6 text-center">
-        Copyright &copy; {today.getFullYear()}
-        <Link href="https://www.uridge.com">{SITE_TITLE}</Link>.
-        <div class="absolute right-0 top-0 pt-6">
-          <!-- <ThemeToggle client:media="(min-width: 768px)" /> -->
-          <div class="max-md:hidden">
-            <ThemeToggle client:load />
+
+    <footer class="mx-auto w-full max-w-7xl p-6 max-md:px-5">
+      <div
+        class="space-y-6 border-t-2 border-zinc-100 pt-6 dark:border-zinc-800 sm:space-y-4"
+      >
+        <div
+          class="flex flex-col space-y-4 md:flex-row md:justify-between md:space-y-0"
+        >
+          <ul
+            class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4"
+          >
+            <li>
+              <a
+                href="/"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/projects"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="/blog"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="/about"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >About</a
+              >
+            </li>
+          </ul>
+
+          <ul
+            class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4"
+          >
+            <li>
+              <a
+                rel="me"
+                href="https://hachyderm.io/@robu"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+              >
+                Mastodon
+              </a>
+            </li>
+            <li>
+              <a
+                href="/linkedin"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="/github"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="/instagram"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex justify-between">
+          <a href="/speedlify" class="basis-44"
+            ><speedlify-score
+              speedlify-url="https://speedlify.mxb.dev"
+              hash="7dda0135"
+              score=""
+              weight=""
+              ><span
+                title="Performance"
+                class="speedlify-score speedlify-score-good">100</span
+              >
+              <span
+                title="Accessibility"
+                class="speedlify-score speedlify-score-good">98</span
+              >
+              <span
+                title="Best Practices"
+                class="speedlify-score speedlify-score-good">100</span
+              >
+              <span title="SEO" class="speedlify-score speedlify-score-good"
+                >100</span
+              ><span class="speedlify-weight">174 KiB</span></speedlify-score
+            ></a
+          >
+          <div>
+            Copyright &copy; {today.getFullYear()}
+            <Link href="https://www.uridge.com">{SITE_TITLE}</Link>.
+          </div>
+          <div class="flex basis-44 flex-row-reverse">
+            <!-- <ThemeToggle client:media="(min-width: 768px)" /> -->
+            <div class="max-md:hidden">
+              <ThemeToggle client:load />
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>
