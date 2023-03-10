@@ -14,33 +14,33 @@ specifiers:
   astro-icon: ^0.8.0
   eslint: ^8.35.0
   eslint-config-prettier: ^8.7.0
-  eslint-plugin-astro: ^0.23.0
+  eslint-plugin-astro: ^0.24.0
   eslint-plugin-jsx-a11y: ^6.7.1
   eslint-plugin-tailwindcss: ^3.10.1
   focus-trap: ^7.4.0
   nanostores: ^0.7.4
-  preact: ^10.13.0
+  preact: ^10.13.1
   prettier: 2.8.4
   prettier-plugin-astro: ^0.8.0
   prettier-plugin-tailwindcss: ^0.2.4
-  rollup: ^3.18.0
+  rollup: ^3.19.1
   sharp: ^0.31.3
   tailwindcss: ^3.2.7
   typescript: ^4.9.5
 
 dependencies:
   '@astrojs/image': 0.16.0_astro@2.1.2+sharp@0.31.3
-  '@astrojs/mdx': 0.18.0_astro@2.1.2+rollup@3.18.0
-  '@astrojs/preact': 2.1.0_preact@10.13.0
+  '@astrojs/mdx': 0.18.0_astro@2.1.2+rollup@3.19.1
+  '@astrojs/preact': 2.1.0_preact@10.13.1
   '@astrojs/rss': 2.2.0
   '@astrojs/sitemap': 1.2.0
   '@astrojs/tailwind': 3.1.0_5fkwwuzubt6borit3q7k7y2k74
-  '@nanostores/preact': 0.3.1_uoxo6ouyx56byhelhmjruydy6y
+  '@nanostores/preact': 0.3.1_w7c6cmcrup6q3v2busabg2llve
   astro: 2.1.2_sharp@0.31.3
   astro-icon: 0.8.0
   focus-trap: 7.4.0
   nanostores: 0.7.4
-  preact: 10.13.0
+  preact: 10.13.1
   sharp: 0.31.3
   tailwindcss: 3.2.7
 
@@ -49,13 +49,13 @@ devDependencies:
   '@typescript-eslint/parser': 5.54.1_ycpbpc6yetojsgtrx3mwntkhsu
   eslint: 8.35.0
   eslint-config-prettier: 8.7.0_eslint@8.35.0
-  eslint-plugin-astro: 0.23.0_eslint@8.35.0
+  eslint-plugin-astro: 0.24.0_eslint@8.35.0
   eslint-plugin-jsx-a11y: 6.7.1_eslint@8.35.0
   eslint-plugin-tailwindcss: 3.10.1_tailwindcss@3.2.7
   prettier: 2.8.4
   prettier-plugin-astro: 0.8.0
   prettier-plugin-tailwindcss: 0.2.4_cfgkwvtfb3vmyej4cugnuognhu
-  rollup: 3.18.0
+  rollup: 3.19.1
   typescript: 4.9.5
 
 packages:
@@ -140,14 +140,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx/0.18.0_astro@2.1.2+rollup@3.18.0:
+  /@astrojs/mdx/0.18.0_astro@2.1.2+rollup@3.19.1:
     resolution: {integrity: sha512-mgICosefMpl67O7ER6Yi6ylT9Hk8ZAO6GhTlx4pYXIMOWFMQlP0NXQ9teZwPhOWzBcHWnsHEF+AzVZWbiC2EBg==}
     engines: {node: '>=16.12.0'}
     dependencies:
       '@astrojs/markdown-remark': 2.1.0_astro@2.1.2
       '@astrojs/prism': 2.1.0
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/rollup': 2.3.0_rollup@3.18.0
+      '@mdx-js/rollup': 2.3.0_rollup@3.19.1
       acorn: 8.8.2
       es-module-lexer: 1.2.0
       estree-util-visit: 1.2.1
@@ -167,7 +167,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/preact/2.1.0_preact@10.13.0:
+  /@astrojs/preact/2.1.0_preact@10.13.1:
     resolution: {integrity: sha512-1AnXpnjC24/mWJyq+EN5DoWp+w9Hg/y3dwFX3728rlBhyuY573jx+4+VHuG/g0A1alzJuIAhSPtqCP0YQktUnw==}
     engines: {node: '>=16.12.0'}
     peerDependencies:
@@ -175,10 +175,10 @@ packages:
     dependencies:
       '@babel/core': 7.21.0
       '@babel/plugin-transform-react-jsx': 7.21.0_@babel+core@7.21.0
-      '@preact/signals': 1.1.3_preact@10.13.0
+      '@preact/signals': 1.1.3_preact@10.13.1
       babel-plugin-module-resolver: 5.0.0
-      preact: 10.13.0
-      preact-render-to-string: 5.2.6_preact@10.13.0
+      preact: 10.13.1
+      preact-render-to-string: 5.2.6_preact@10.13.1
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -212,7 +212,7 @@ packages:
     dependencies:
       '@proload/core': 0.3.3
       astro: 2.1.2_sharp@0.31.3
-      autoprefixer: 10.4.13_postcss@8.4.21
+      autoprefixer: 10.4.14_postcss@8.4.21
       postcss: 8.4.21
       postcss-load-config: 4.0.1_postcss@8.4.21
       tailwindcss: 3.2.7
@@ -801,21 +801,21 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/rollup/2.3.0_rollup@3.18.0:
+  /@mdx-js/rollup/2.3.0_rollup@3.19.1:
     resolution: {integrity: sha512-wLvRfJS/M4UmdqTd+WoaySEE7q4BIejYf1xAHXYvtT1du/1Tl/z2450Gg2+Hu7fh05KwRRiehiTP9Yc/Dtn0fA==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@rollup/pluginutils': 5.0.2_rollup@3.18.0
-      rollup: 3.18.0
+      '@rollup/pluginutils': 5.0.2_rollup@3.19.1
+      rollup: 3.19.1
       source-map: 0.7.4
       vfile: 5.3.7
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@nanostores/preact/0.3.1_uoxo6ouyx56byhelhmjruydy6y:
+  /@nanostores/preact/0.3.1_w7c6cmcrup6q3v2busabg2llve:
     resolution: {integrity: sha512-D5lC1tNhwlVURCFJUTlnRkQ3LRNt6Sc2XHByBwgHPaKLBUPJxAaNAL7kz2dAEhge1fk9dNXAexCdepwiIFodOQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -823,7 +823,7 @@ packages:
       preact: '>=10.0.0'
     dependencies:
       nanostores: 0.7.4
-      preact: 10.13.0
+      preact: 10.13.1
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -859,13 +859,13 @@ packages:
     resolution: {integrity: sha512-Kui4p7PMcEQevBgsTO0JBo3gyQ88Q3qzEvsVCuSp11t0JcN4DmGCTJcGRVSCq7Bn7lGxJBO+57jNSzDoDJ+QmA==}
     dev: false
 
-  /@preact/signals/1.1.3_preact@10.13.0:
+  /@preact/signals/1.1.3_preact@10.13.1:
     resolution: {integrity: sha512-N09DuAVvc90bBZVRwD+aFhtGyHAmJLhS3IFoawO/bYJRcil4k83nBOchpCEoS0s5+BXBpahgp0Mjf+IOqP57Og==}
     peerDependencies:
       preact: 10.x
     dependencies:
       '@preact/signals-core': 1.2.3
-      preact: 10.13.0
+      preact: 10.13.1
     dev: false
 
   /@proload/core/0.3.3:
@@ -875,7 +875,7 @@ packages:
       escalade: 3.1.1
     dev: false
 
-  /@rollup/pluginutils/5.0.2_rollup@3.18.0:
+  /@rollup/pluginutils/5.0.2_rollup@3.19.1:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -887,7 +887,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.18.0
+      rollup: 3.19.1
     dev: false
 
   /@trysound/sax/0.2.0:
@@ -1289,8 +1289,8 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-eslint-parser/0.11.0:
-    resolution: {integrity: sha512-vcz8KBQ20WNOot6qK6w7DQtz2hwg+aLLqlUa6nAnitJLqbR12GxJN/+96U3O+VI4da5Up+FMWqNoL9mywSENtA==}
+  /astro-eslint-parser/0.12.0:
+    resolution: {integrity: sha512-1r8TXPHoUk6OSNzeGOGpklmPedleYVpZU50jIPfsQjzrGMs+XpCSCc8+AATnKraPYnTvkmNClhjafSY6w3H90g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@astrojs/compiler': 1.2.0
@@ -1397,15 +1397,15 @@ packages:
       synckit: 0.8.5
     dev: true
 
-  /autoprefixer/10.4.13_postcss@8.4.21:
-    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
+  /autoprefixer/10.4.14_postcss@8.4.21:
+    resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001462
+      caniuse-lite: 1.0.30001464
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1460,7 +1460,7 @@ packages:
     dependencies:
       buffer: 5.7.1
       inherits: 2.0.4
-      readable-stream: 3.6.1
+      readable-stream: 3.6.2
     dev: false
 
   /bl/5.1.0:
@@ -1468,7 +1468,7 @@ packages:
     dependencies:
       buffer: 6.0.3
       inherits: 2.0.4
-      readable-stream: 3.6.1
+      readable-stream: 3.6.2
     dev: false
 
   /boolbase/1.0.0:
@@ -1513,8 +1513,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001462
-      electron-to-chromium: 1.4.325
+      caniuse-lite: 1.0.30001464
+      electron-to-chromium: 1.4.327
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: false
@@ -1561,8 +1561,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /caniuse-lite/1.0.30001462:
-    resolution: {integrity: sha512-PDd20WuOBPiasZ7KbFnmQRyuLE7cFXW2PVd7dmALzbkUXEP46upAuCDm9eY9vho8fgNMGmbAX92QBZHzcnWIqw==}
+  /caniuse-lite/1.0.30001464:
+    resolution: {integrity: sha512-oww27MtUmusatpRpCGSOneQk2/l5czXANDSFvsc7VuOQ86s3ANhZetpwXNf1zY/zdfP63Xvjz325DAdAoES13g==}
     dev: false
 
   /ccount/2.0.1:
@@ -1933,8 +1933,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
 
-  /electron-to-chromium/1.4.325:
-    resolution: {integrity: sha512-K1C03NT4I7BuzsRdCU5RWkgZxtswnKDYM6/eMhkEXqKu4e5T+ck610x3FPzu1y7HVFSiQKZqP16gnJzPpji1TQ==}
+  /electron-to-chromium/1.4.327:
+    resolution: {integrity: sha512-DIk2H4g/3ZhjgiABJjVdQvUdMlSABOsjeCm6gmUzIdKxAuFrGiJ8QXMm3i09grZdDBMC/d8MELMrdwYRC0+YHg==}
     dev: false
 
   /emmet/2.3.6:
@@ -2101,15 +2101,15 @@ packages:
       eslint: 8.35.0
     dev: true
 
-  /eslint-plugin-astro/0.23.0_eslint@8.35.0:
-    resolution: {integrity: sha512-KsIL1sOrz40qf/d9RP4E3sH6+p6nrIBBXB6rPuE9EWb5de+m9BWfvURuoECXfiXCmQh8UlHJUxgSWxn1bLsD8g==}
+  /eslint-plugin-astro/0.24.0_eslint@8.35.0:
+    resolution: {integrity: sha512-oRGBMZPAFHhAHD8cyZez4OA5LRkgxLA+RtCIInC4nzw8thO/uojMdKXDri+sy2IFsGcu2PpOw70Uik0U5/izug==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
       '@typescript-eslint/types': 5.54.1
-      astro-eslint-parser: 0.11.0
+      astro-eslint-parser: 0.12.0
       eslint: 8.35.0
       eslint-utils: 3.0.0_eslint@8.35.0
       postcss: 8.4.21
@@ -4301,17 +4301,17 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /preact-render-to-string/5.2.6_preact@10.13.0:
+  /preact-render-to-string/5.2.6_preact@10.13.1:
     resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.13.0
+      preact: 10.13.1
       pretty-format: 3.8.0
     dev: false
 
-  /preact/10.13.0:
-    resolution: {integrity: sha512-ERdIdUpR6doqdaSIh80hvzebHB7O6JxycOhyzAeLEchqOq/4yueslQbfnPwXaNhAYacFTyCclhwkEbOumT0tHw==}
+  /preact/10.13.1:
+    resolution: {integrity: sha512-KyoXVDU5OqTpG9LXlB3+y639JAGzl8JSBXLn1J9HTSB3gbKcuInga7bZnXLlxmK94ntTs1EFeZp0lrja2AuBYQ==}
     dev: false
 
   /prebuild-install/7.1.1:
@@ -4490,8 +4490,8 @@ packages:
     dependencies:
       pify: 2.3.0
 
-  /readable-stream/3.6.1:
-    resolution: {integrity: sha512-+rQmrWMYGA90yenhTYsLWAsLsqVC8osOw6PKE1HDYiO0gdPeKe/xDHNzIAIn4C91YQ6oenEhfYqqc1883qHbjQ==}
+  /readable-stream/3.6.2:
+    resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
     dependencies:
       inherits: 2.0.4
@@ -4697,8 +4697,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/3.18.0:
-    resolution: {integrity: sha512-J8C6VfEBjkvYPESMQYxKHxNOh4A5a3FlP+0BETGo34HEcE4eTlgCrO2+eWzlu2a/sHs2QUkZco+wscH7jhhgWg==}
+  /rollup/3.19.1:
+    resolution: {integrity: sha512-lAbrdN7neYCg/8WaoWn/ckzCtz+jr70GFfYdlf50OF7387HTg+wiuiqJRFYawwSPpqfqDNYqK7smY/ks2iAudg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -5091,7 +5091,7 @@ packages:
       end-of-stream: 1.4.4
       fs-constants: 1.0.0
       inherits: 2.0.4
-      readable-stream: 3.6.1
+      readable-stream: 3.6.2
     dev: false
 
   /text-table/0.2.0:
@@ -5369,7 +5369,7 @@ packages:
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1
-      rollup: 3.18.0
+      rollup: 3.19.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
