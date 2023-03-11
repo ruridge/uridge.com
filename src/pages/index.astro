@@ -4,12 +4,11 @@ import { Image } from "@astrojs/image/components";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
 import Link from "@ui/Link.astro";
+import { getSortedPosts } from "@utils/getSortedPosts";
 
-const allProjects = await getCollection("projects");
-const allPosts = await getCollection("blog", ({ data }) => {
-  return data.draft !== true;
-});
-const recentPosts = [...allPosts].slice(0, 6);
+const projects = await getCollection("projects");
+const sortedPosts = getSortedPosts(await getCollection("blog"));
+const recentPosts = sortedPosts.slice(0, 6);
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -43,7 +42,7 @@ const recentPosts = [...allPosts].slice(0, 6);
     class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto py-3 px-5 sm:snap-none md:mx-0 md:px-0"
   >
     {
-      allProjects.map(({ slug, data }) => {
+      projects.map(({ slug, data }) => {
         return (
           <a
             href={"/projects/" + slug}

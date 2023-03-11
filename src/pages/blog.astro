@@ -2,45 +2,49 @@
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
-import Link from "@ui/Link.astro";
-import Text from "@ui/Text.astro";
+import { Image } from "@astrojs/image/components";
+import { getSortedPosts } from "@utils/getSortedPosts";
 
-// Use Astro.glob() to fetch all posts, and then sort them by date.
-// const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-//   (a, b) =>
-//     new Date(b.frontmatter.pubDate).valueOf() -
-//     new Date(a.frontmatter.pubDate).valueOf()
-// );
-const allPosts = await getCollection("blog");
+const sortedPosts = getSortedPosts(await getCollection("blog"));
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <Text as="h1" size="h2">Blog</Text>
-  <Text as="h2" size="h3">
+  <h1
+    class="mb-6 font-serif text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100"
+  >
+    Blog Posts
+  </h1>
+  <p class="mb-12 text-xl">
     A collection of my writing, useful tips, and code snippets.
-  </Text>
-  <br />
-  <section>
-    <ul>
-      {
-        allPosts.map((post) => (
-          <li class="flex">
+  </p>
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
+    {
+      sortedPosts.map(({ slug, data }) => (
+        <div class="">
+          <a href={"/blog/" + slug} class="group">
+            <Image
+              src={data.image.url}
+              alt={data.image.alt}
+              class="h-72 rounded-lg object-cover object-center shadow ring-violet-600 ring-offset-4 ring-offset-neutral-50 transition duration-300 group-hover:ring-4 dark:ring-offset-gray-900"
+              width={384 * 3}
+              height={384 * 3}
+            />
             <time
-              datetime={post.data.pubDate.toDateString()}
-              class="basis-32 italic text-yellow-900"
+              datetime={data.pubDate.toDateString()}
+              class="mt-4 block italic text-gray-700 dark:text-gray-400"
             >
-              {new Date(post.data.pubDate).toLocaleDateString("en-gb", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
+              <span>
+                {new Date(data.pubDate).toLocaleDateString("en-gb", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
             </time>
-            <Link href={"/blog/" + post.slug} class="visited:text-purple-700">
-              {post.data.title}
-            </Link>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+            <div class="mt-2 text-xl font-bold">{data.title}</div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </Layout>
