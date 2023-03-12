@@ -79,7 +79,9 @@ const today = new Date();
       <slot />
     </main>
 
-    <footer class="mx-auto w-full max-w-7xl py-6 px-4 md:px-6">
+    <footer
+      class="mx-auto w-full max-w-7xl py-6 px-4 text-zinc-600 dark:text-zinc-300 md:px-6"
+    >
       <div
         class="space-y-6 border-t-2 border-zinc-100 pt-6 dark:border-zinc-800 sm:space-y-4"
       >
@@ -92,28 +94,28 @@ const today = new Date();
             <li>
               <a
                 href="/"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >Home</a
               >
             </li>
             <li>
               <a
                 href="/projects"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >Projects</a
               >
             </li>
             <li>
               <a
                 href="/blog"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >Blog</a
               >
             </li>
             <li>
               <a
                 href="/about"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >About</a
               >
             </li>
@@ -126,7 +128,7 @@ const today = new Date();
               <a
                 rel="me"
                 href="https://hachyderm.io/@robu"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
               >
                 Mastodon
               </a>
@@ -134,55 +136,36 @@ const today = new Date();
             <li>
               <a
                 href="/linkedin"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >LinkedIn</a
               >
             </li>
             <li>
               <a
                 href="/github"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >GitHub</a
               >
             </li>
             <li>
               <a
                 href="/instagram"
-                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 text-neutral-600 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
+                class="inline-flex appearance-none items-center gap-1 border-0 bg-transparent p-0 no-underline underline-offset-2 [--link-icon-size:theme(spacing.6)] hover:underline focus:outline-none [&>svg]:h-[var(--link-icon-size)] [&>svg]:w-[var(--link-icon-size)]"
                 >Instagram</a
               >
             </li>
           </ul>
         </div>
         <div class="flex justify-between">
-          <a href="/speedlify" class="basis-44"
-            ><speedlify-score
-              speedlify-url="https://speedlify.mxb.dev"
-              hash="7dda0135"
-              score=""
-              weight=""
-              ><span
-                title="Performance"
-                class="speedlify-score speedlify-score-good">100</span
-              >
-              <span
-                title="Accessibility"
-                class="speedlify-score speedlify-score-good">98</span
-              >
-              <span
-                title="Best Practices"
-                class="speedlify-score speedlify-score-good">100</span
-              >
-              <span title="SEO" class="speedlify-score speedlify-score-good"
-                >100</span
-              ><span class="speedlify-weight">174 KiB</span></speedlify-score
-            ></a
-          >
+          <speedlify-score
+            speedlify-url="https://statuesque-lollipop-405fa6.netlify.app/"
+            url="https://uridge-com.vercel.app/"
+            class="basis-52"></speedlify-score>
           <div>
             Copyright &copy; {today.getFullYear()}
             <Link href="https://www.uridge.com">{SITE_TITLE}</Link>.
           </div>
-          <div class="flex basis-44 flex-row-reverse">
+          <div class="flex basis-52 flex-row-reverse">
             <!-- <ThemeToggle client:media="(min-width: 768px)" /> -->
             <div class="max-md:hidden">
               <ThemeToggle client:load />
@@ -193,3 +176,8 @@ const today = new Date();
     </footer>
   </body>
 </html>
+
+<script>
+  import "speedlify-score/speedlify-score.js";
+  import "speedlify-score/speedlify-score.css";
+</script>
