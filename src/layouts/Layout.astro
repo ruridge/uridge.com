@@ -7,6 +7,8 @@ import { ThemeToggle } from "@components/ThemeToggle";
 import Link from "@components/ui/Link.astro";
 import { SITE_TITLE } from "src/config";
 
+import "speedlify-score/speedlify-score.css";
+
 export interface Props {
   title: string;
   description: string;
@@ -158,7 +160,7 @@ const today = new Date();
         </div>
         <div class="flex justify-between">
           <speedlify-score
-            speedlify-url="https://statuesque-lollipop-405fa6.netlify.app/"
+            speedlify-url="https://speedlify.uridge.com/"
             url="https://uridge-com.vercel.app/"
             class="basis-52"></speedlify-score>
           <div>
@@ -179,5 +181,4 @@ const today = new Date();
 
 <script>
   import "speedlify-score/speedlify-score.js";
-  import "speedlify-score/speedlify-score.css";
 </script>
