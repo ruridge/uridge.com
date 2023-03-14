@@ -51,7 +51,7 @@ function useTheme() {
 
   // update app theme when system theme changes
   useEffect(() => {
-    let mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     mediaQuery.addEventListener("change", update);
 
