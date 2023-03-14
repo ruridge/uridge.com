@@ -73,7 +73,6 @@ export function ThemeToggle() {
         return (
           <label key={t} htmlFor={t}>
             <input
-              id={t}
               className="absolute appearance-none"
               type="radio"
               name="theme-toggle"
