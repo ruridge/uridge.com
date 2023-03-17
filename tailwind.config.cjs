@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -10,6 +10,7 @@ module.exports = {
         },
         default: "rgb(var(--color-default) / <alpha-value>)",
         primary: "rgb(var(--color-primary) / <alpha-value>)",
+        donkey: "rgb(var(--color-donkey) / <alpha-value>)",
       },
       animation: {
         "bg-slide": "bg_slide 5s linear infinite alternate",
@@ -31,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
