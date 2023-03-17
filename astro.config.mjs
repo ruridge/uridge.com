@@ -6,7 +6,7 @@ import mdx from "@astrojs/mdx";
 import preact from "@astrojs/preact";
 
 export default defineConfig({
-  site: "https://uridge-com.vercel.app/",
+  site: "https://www.uridge.com/",
   integrations: [
     tailwind({
       config: {

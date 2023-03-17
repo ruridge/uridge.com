@@ -10,7 +10,7 @@ const data = await fetch("https://speedlify.uridge.com/api/urls.json").then(
 );
 const url = new URL(Astro.props.href);
 const speedlifyKey = new URL(
-  url.pathname.split("/").filter(Boolean).join("/"),
+  url.pathname.split("/").filter(Boolean).join("/") + "/",
   url.origin
 ).href;
 
