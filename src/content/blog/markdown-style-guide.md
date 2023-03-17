@@ -8,7 +8,7 @@ image:
   alt: ""
 ---
 
-## Headings
+<h2>Headings</h2>
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
@@ -74,19 +74,19 @@ The blockquote element represents content that is quoted from another source, op
 
 ## List Types
 
-#### Ordered List
+<h4>Ordered List</h4>
 
 1. First item
 2. Second item
 3. Third item
 
-#### Unordered List
+<h4>Unordered List</h4>
 
 - List item
 - Another item
 - And another item
 
-#### Nested list
+<h4>Nested list</h4>
 
 - Fruit
   - Apple
