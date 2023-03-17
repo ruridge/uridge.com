@@ -1,0 +1,28 @@
+---
+import "speedlify-score/speedlify-score.css";
+
+export interface Props {
+  href: string;
+}
+
+const data = await fetch("https://speedlify.uridge.com/api/urls.json").then(
+  (response) => response.json()
+);
+const url = new URL(Astro.props.href);
+const speedlifyKey = new URL(
+  url.pathname.split("/").filter(Boolean).join("/"),
+  url.origin
+).href;
+
+const speedlifyHash = data[speedlifyKey]?.hash;
+---
+
+<a href="https://speedlify.uridge.com/uridge.com/">
+  <speedlify-score
+    speedlify-url="https://speedlify.uridge.com/"
+    hash={speedlifyHash}
+    score
+    weight></speedlify-score></a
+>
+
+<script src="speedlify-score/speedlify-score.js"></script>

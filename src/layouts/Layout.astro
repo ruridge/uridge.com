@@ -6,8 +6,7 @@ import Header from "@components/Header.astro";
 import { ThemeToggle } from "@components/ThemeToggle";
 import Link from "@components/ui/Link.astro";
 import { SITE_TITLE } from "src/config";
-
-import "speedlify-score/speedlify-score.css";
+import SpeedlifyScore from "@components/SpeedlifyScore.astro";
 
 export interface Props {
   title: string;
@@ -18,15 +17,6 @@ export interface Props {
 const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const today = new Date();
-
-const response = await fetch("https://speedlify.uridge.com/api/urls.json");
-const data = await response.json();
-const speedlifyKey = new URL(
-  Astro.url.pathname.split("/").filter(Boolean).join("/"),
-  Astro.site
-).href;
-
-const speedlyHash = data[speedlifyKey]?.hash || "e6a60b95"; // default to the hash for the home page.
 ---
 
 <!DOCTYPE html>
@@ -39,7 +29,7 @@ const speedlyHash = data[speedlifyKey]?.hash || "e6a60b95"; // default to the ha
     <meta name="generator" content={Astro.generator} />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={canonicalURL.href} />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -167,14 +157,9 @@ const speedlyHash = data[speedlifyKey]?.hash || "e6a60b95"; // default to the ha
           </ul>
         </div>
         <div class="flex justify-between">
-          <a href="https://speedlify.uridge.com/uridge.com/">
-            <speedlify-score
-              class="basis-56"
-              speedlify-url="https://speedlify.uridge.com/"
-              hash={speedlyHash}
-              score
-              weight></speedlify-score>
-          </a>
+          <div class="basis-56">
+            <SpeedlifyScore href={canonicalURL.href} />
+          </div>
           <div>
             Copyright &copy; {today.getFullYear()}
             <Link href="https://www.uridge.com">{SITE_TITLE}</Link>.
@@ -190,7 +175,3 @@ const speedlyHash = data[speedlifyKey]?.hash || "e6a60b95"; // default to the ha
     </footer>
   </body>
 </html>
-
-<script>
-  import "speedlify-score/speedlify-score.js";
-</script>
