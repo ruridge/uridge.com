@@ -71,7 +71,7 @@ export function ThemeToggle() {
       {THEMES.map((t) => {
         const isActive = t === theme;
         return (
-          <label key={t} htmlFor={t}>
+          <label key={t}>
             <input
               className="absolute appearance-none"
               type="radio"
