@@ -17,12 +17,15 @@ const speedlifyKey = new URL(
 const speedlifyHash = data[speedlifyKey]?.hash;
 ---
 
-<a href="https://speedlify.uridge.com/uridge.com/">
+<a
+  href="https://speedlify.uridge.com/uridge.com/"
+  class="block h-[33.8px] w-[221.13px]"
+>
   <speedlify-score
     speedlify-url="https://speedlify.uridge.com/"
     hash={speedlifyHash}
     score
-    weight></speedlify-score></a
->
+    weight></speedlify-score>
+</a>
 
 <script src="speedlify-score/speedlify-score.js"></script>
