@@ -3,8 +3,9 @@ import { h } from "hastscript";
 
 export const autolinkConfig: Options = {
   properties: {
-    class:
-      "ml-2 text-zinc-300 no-underline hover:text-blue-600 dark:text-zinc-600 dark:hover:text-blue-400",
+    "aria-hidden": "true",
+    tabindex: "-1",
+    class: "anchor",
   },
   behavior: "append",
   content: h("span", null, "#"),
