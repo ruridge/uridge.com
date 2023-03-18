@@ -10,8 +10,8 @@
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
-    "format:check": "prettier --check --plugin-search-dir=. .",
-    "format": "prettier --write --plugin-search-dir=. .",
+    "format:check": "prettier --plugin-search-dir=. --check .",
+    "format": "prettier --plugin-search-dir=. --write .",
     "lint": "eslint src --cache --cache-strategy content"
   },
   "dependencies": {
