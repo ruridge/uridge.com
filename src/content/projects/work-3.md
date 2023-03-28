@@ -3,9 +3,8 @@ title: "NextJS People App"
 pubDate: 2022-07-01
 description: "This is a continuation of a work assessment I was given."
 author: "Robert Uridge"
-image:
-  url: "https://picsum.photos/seed/work-3/536/354.jpg"
-  alt: ""
+image: "https://picsum.photos/seed/work-3/536/354.jpg"
+imageAlt: ""
 tags: ["astro", "blogging", "learning in public"]
 ---
 

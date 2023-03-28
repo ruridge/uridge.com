@@ -3,9 +3,8 @@ title: "Minesweeper in React"
 pubDate: 2022-07-01
 description: "This is the first post of my new Astro blog."
 author: "Robert Uridge"
-image:
-  url: "https://picsum.photos/seed/work-1/536/354.jpg"
-  alt: "The Astro logo with the word One."
+image: "https://picsum.photos/seed/work-1/536/354.jpg"
+imageAlt: "The Astro logo with the word One."
 tags: ["astro", "blogging", "learning in public"]
 ---
 

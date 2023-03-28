@@ -12,10 +12,10 @@ const { frontmatter } = Astro.props;
   <Text><em>{frontmatter.description}</em></Text>
   <Text>Written by {frontmatter.author}</Text>
   <Image
-    alt={frontmatter.image.alt}
-    src={frontmatter.image.url}
+    alt={frontmatter.imageAlt}
+    src={frontmatter.image}
     width={390}
-    aspectRatio={1.5}
+    height={260}
   />
   <slot />
 </Layout>

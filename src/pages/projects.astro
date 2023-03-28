@@ -19,8 +19,8 @@ const allProjects = await getCollection("projects");
         <div class="">
           <a href={"/projects/" + project.slug}>
             <Image
-              src={project.data.image.url}
-              alt={project.data.image.alt}
+              src={project.data.image}
+              alt={project.data.imageAlt}
               class="rounded-lg shadow"
               width={390}
               height={260}

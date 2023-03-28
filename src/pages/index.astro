@@ -74,8 +74,8 @@ const recentPosts = sortedPosts.slice(0, 6);
         <div class="">
           <a href={"/blog/" + slug} class="group">
             <Image
-              src={data.image.url}
-              alt={data.image.alt}
+              src={data.image}
+              alt={data.imageAlt}
               class="h-72 rounded-lg object-cover object-center shadow ring-violet-600 ring-offset-4 ring-offset-neutral-50 transition duration-300 group-hover:ring-4 dark:ring-offset-gray-900"
               width={384 * 3}
               height={384 * 3}

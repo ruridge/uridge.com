@@ -8,13 +8,13 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title} description={frontmatter.description}>
   <article class="mx-auto max-w-prose md:text-lg">
     {
-      frontmatter.image.url && (
+      frontmatter.image && (
         <div class="relative inset-x-1/2 mx-[-50vw] w-screen">
           <Image
             width={720}
             height={360}
-            src={frontmatter.image.url}
-            alt={frontmatter.image.alt}
+            src={frontmatter.image}
+            alt={frontmatter.imageAlt}
             class="h-48 w-full object-cover sm:h-64"
           />
         </div>

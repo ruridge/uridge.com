@@ -3,9 +3,8 @@ title: "React Native One Thing App"
 pubDate: 2022-07-01
 description: "This is the writeup of my React Native todo app project."
 author: "Robert Uridge"
-image:
-  url: "https://picsum.photos/seed/work-2/536/354.jpg"
-  alt: "The Astro logo with the word One."
+image: "https://picsum.photos/seed/work-2/536/354.jpg"
+imageAlt: "The Astro logo with the word One."
 tags: ["astro", "blogging", "learning in public"]
 ---
 
