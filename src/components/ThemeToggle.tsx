@@ -12,12 +12,12 @@ function update() {
     document.documentElement.classList.add("dark");
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", "#0B1120");
+      ?.setAttribute("content", "#18181B");
   } else {
     document.documentElement.classList.remove("dark");
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", "#f8fafc");
+      ?.setAttribute("content", "#ffffff");
   }
 }
 
