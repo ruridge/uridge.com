@@ -1,8 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Text from "@components/ui/Text.astro";
 import { Image } from "@astrojs/image/components";
-import meSmilePhoto from "@assets/me-smile-full.jpeg";
+import meSmilePhoto from "@assets/me-smile-crop.jpeg";
 ---
 
 <Layout title="About me | Robert Uridge" description="">
@@ -10,32 +9,20 @@ import meSmilePhoto from "@assets/me-smile-full.jpeg";
     <Image
       alt=""
       src={meSmilePhoto}
-      width={500}
-      height={500}
+      width={1000}
+      height={1332}
       format="webp"
-      class="basis-2/5 overflow-hidden shadow-sm shadow-neutral-200/50 dark:shadow-md dark:shadow-black/25 sm:rounded-r-xl"
+      class="basis-2/5 overflow-hidden object-contain shadow-sm shadow-neutral-200/50 dark:shadow-md dark:shadow-black/25 sm:rounded-r-xl"
     />
     <div
-      class="prose prose-slate max-w-prose basis-3/5 pr-4 text-lg dark:prose-invert max-sm:pl-4 md:pr-6"
+      class="prose prose-slate max-w-prose basis-3/5 pr-4 text-lg dark:prose-invert max-lg:prose-lg lg:prose-2xl max-sm:pl-4 md:pr-6"
     >
-      <h1 class="text-4xl max-sm:mt-8">Hello There.</h1>
-      <Text as="p">I'm Rob and I like dogs! Also Elsa and Donkey!🐶</Text>
+      <h1>Hello there.</h1>
+      <p>I'm Rob, a front-end web and app developer from England</p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-        quas, inventore possimus fuga iste magnam quae eveniet atque corporis
-        ipsam sed quos saepe voluptatum ipsa quibusdam laboriosam cumque libero
-        quisquam!
+        I've been building the web for the last 12 years, working with clients
+        across various countries and industries.
       </p>
     </div>
-  </div>
-  <div class="prose prose-slate mx-auto dark:prose-invert">
-    <h2 class="mt-6 mb-4 text-3xl">
-      Here's some other stuff we can write about
-    </h2>
-    <p class="">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi rem,
-      molestias quos temporibus error voluptates? Eaque minus eum corrupti nobis
-      maxime sequi facere magni. Suscipit tempore ad pariatur tenetur fuga.
-    </p>
   </div>
 </Layout>

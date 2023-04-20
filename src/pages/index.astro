@@ -12,7 +12,7 @@ const recentPosts = sortedPosts.slice(0, 6);
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div class="mt-8 mb-16 flex flex-col gap-4 md:mt-28 md:mb-32">
+  <div class="mb-16 mt-8 flex flex-col gap-4 md:mb-32 md:mt-28">
     <h1
       class="font-serif text-4xl font-bold tracking-tight sm:text-8xl sm:font-normal"
     >
@@ -39,7 +39,7 @@ const recentPosts = sortedPosts.slice(0, 6);
     Things I've Built
   </h2>
   <div
-    class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto py-3 px-5 sm:snap-none md:mx-0 md:px-0"
+    class="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 py-3 sm:snap-none md:mx-0 md:px-0"
   >
     {
       projects.map(({ slug, data }) => {
@@ -48,7 +48,7 @@ const recentPosts = sortedPosts.slice(0, 6);
             href={"/projects/" + slug}
             class="group flex w-72 flex-none snap-center snap-always rounded-lg bg-gradient-45 from-[rgb(124,58,237)] via-[#da62c4_30%] to-[#f4f4f5_60%] bg-[length:400%] bg-right p-0.5 shadow-md transition-[background-position] duration-500 ease-out-quint focus-within:bg-left hover:bg-left dark:to-[transparent_60%]"
           >
-            <div class="flex h-full w-full flex-col rounded-md bg-zinc-100/80 py-4 px-5 dark:bg-slate-800/80">
+            <div class="flex h-full w-full flex-col rounded-md bg-zinc-100/80 px-5 py-4 dark:bg-slate-800/80">
               <h2 class="text-xl text-black transition-[color] group-hover:text-purple-600 dark:text-white dark:group-hover:text-white">
                 {data.title}
               </h2>
