@@ -81,7 +81,7 @@ export function ThemeToggle() {
               onChange={() => setTheme(t)}
             ></input>
             <div
-              className={`min-w-[42px] rounded-full border py-[1px] px-2 text-center text-xs capitalize  ${
+              className={`min-w-[42px] rounded-full border px-2 py-[1px] text-center text-xs capitalize  ${
                 isActive
                   ? "border-[#0071e3] bg-[#0071e3] text-white"
                   : "border-transparent text-[#0071e3]"
