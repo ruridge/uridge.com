@@ -10,3 +10,15 @@
   from = "https://uridge-com.netlify.app/"
   to = "https://www.uridge.com/"
   force = true
+
+[[redirects]]
+  from = "/linkedin"
+  to = "https://www.linkedin.com/in/ruridge/"
+
+[[redirects]]
+  from = "/twitter"
+  to = "https://twitter.com/roburidge"
+
+[[redirects]]
+  from = "/instagram"
+  to = "https://www.instagram.com/roburidge/"
