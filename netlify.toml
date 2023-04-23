@@ -16,6 +16,10 @@
   to = "https://www.linkedin.com/in/ruridge/"
 
 [[redirects]]
+  from = "/github"
+  to = "https://github.com/ruridge"
+
+[[redirects]]
   from = "/twitter"
   to = "https://twitter.com/roburidge"
 
