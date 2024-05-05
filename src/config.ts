@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = "Robert Uridge";
 export const SITE_DESCRIPTION =
-  "Robert Uridge is a professional front-end developer based in Taipei, Taiwan.";
+  "Robert Uridge is a professional full-stack developer from England.";
