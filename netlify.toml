@@ -24,5 +24,13 @@
   to = "https://twitter.com/roburidge"
 
 [[redirects]]
+  from = "/x"
+  to = "https://twitter.com/roburidge"
+
+[[redirects]]
   from = "/instagram"
   to = "https://www.instagram.com/roburidge/"
+
+[[redirects]]
+  from = "/mastodon"
+  to = "https://hachyderm.io/@robu"
