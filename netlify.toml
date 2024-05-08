@@ -34,3 +34,7 @@
 [[redirects]]
   from = "/mastodon"
   to = "https://hachyderm.io/@robu"
+
+[[redirects]]
+  from = "/about"
+  to = "https://www.uridge.com/"
