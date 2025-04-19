@@ -1,8 +1,9 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
+// widths={[640, 828, 1080, 1200, 1480, 1710, 1920, 2048, 2270, 2480, 2660, 2840, 3000, 3160, 3300, 3450, 3580, 3710, 3840, 3920, 4000, frontmatter.image.width]}
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -11,11 +12,13 @@ const { frontmatter } = Astro.props;
       frontmatter.image && (
         <div class="relative inset-x-1/2 mx-[-50vw] w-screen">
           <Image
-            width={720}
             height={360}
+            widths={[640, 750, 828, 1080, 1200, 1480, 1710, 1920,  2048, 3840, frontmatter.image.width]}
+            sizes="100vw"
             src={frontmatter.image}
             alt={frontmatter.imageAlt}
             class="h-48 w-full object-cover sm:h-64"
+            loading="eager"
           />
         </div>
       )

@@ -2,7 +2,7 @@
 title: "Keeping you git commits tidy with --fixup and --autosquash"
 description: "Keep your commit history clear by re-write history making the commits easier to follow."
 pubDate: 2021-06-28T17:24:39+08:00
-image: "https://picsum.photos/seed/git-fixup-rebase/2560/1440.jpg"
+image: "./git-fixup-rebase-cover.jpg"
 imageAlt: ""
 
 lastUpdated: 2021-06-28T17:24:39+08:00

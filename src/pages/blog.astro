@@ -1,9 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "@layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
 import { getSortedPosts } from "@utils/getSortedPosts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 
 const sortedPosts = getSortedPosts(await getCollection("blog"));
 ---
