@@ -21,8 +21,8 @@
     "@astrojs/preact": "^4.0.9",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
-    "@astrojs/tailwind": "^6.0.2",
     "@nanostores/preact": "^0.4.1",
+    "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.4",
     "astro-icon": "^0.8.0",
     "focus-trap": "^7.4.0",
@@ -31,11 +31,11 @@
     "rehype-autolink-headings": "^6.1.1",
     "sharp": "^0.32.0",
     "speedlify-score": "^3.0.0",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "eslint": "^8.39.0",

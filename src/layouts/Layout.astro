@@ -54,6 +54,7 @@ const today = new Date();
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Mastodon Verification -->
+    <link rel="me" href="https://hachyderm.io/@robu" />
     <link rel="me" href="https://social.treehouse.systems/@rob" />
 
     <script is:inline>
@@ -77,7 +78,7 @@ const today = new Date();
     <div class="mx-auto w-full max-w-7xl px-4 md:px-6">
       <Header />
     </div>
-    <main class="mx-auto w-full max-w-7xl flex-1 px-4 md:px-6">
+    <main class="w-full flex flex-1 flex-col items-center">
       <slot />
     </main>
 
@@ -118,28 +119,13 @@ const today = new Date();
             <li>
               <a
                 rel="me"
-                href="/x"
-                class="underline-offset-2 hover:underline focus:outline-none"
-              >
-                X (twitter)
-              </a>
-            </li>
-            <li>
-              <a
-                rel="me"
                 href="/mastodon"
                 class="underline-offset-2 hover:underline focus:outline-none"
               >
                 Mastodon
               </a>
             </li>
-            <li>
-              <a
-                href="/linkedin"
-                class="underline-offset-2 hover:underline focus:outline-none"
-                >LinkedIn</a
-              >
-            </li>
+            
             <li>
               <a
                 href="/github"
@@ -148,10 +134,10 @@ const today = new Date();
               >
             </li>
             <li>
-              <a
-                href="/instagram"
-                class="underline-offset-2 hover:underline focus:outline-none"
-                >Instagram</a
+               <a
+                 href="/linkedin"
+                 class="underline-offset-2 hover:underline focus:outline-none"
+                 >LinkedIn</a
               >
             </li>
           </ul>

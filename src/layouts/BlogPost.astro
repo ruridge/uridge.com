@@ -7,22 +7,22 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
-  <article class="mx-auto max-w-prose md:text-lg">
-    {
-      frontmatter.image && (
-        <div class="relative inset-x-1/2 mx-[-50vw] w-screen">
-          <Image
-            height={360}
-            widths={[640, 750, 828, 1080, 1200, 1480, 1710, 1920,  2048, 3840, frontmatter.image.width]}
-            sizes="100vw"
-            src={frontmatter.image}
-            alt={frontmatter.imageAlt}
-            class="h-48 w-full object-cover sm:h-64"
-            loading="eager"
-          />
-        </div>
-      )
-    }
+	{
+    frontmatter.image && (
+      <div class="self-stretch">
+        <Image
+          width={1080}
+          widths={[640, 750, 828, 1080, 1200, 1480, 1710, 1920,  2048, 3840, frontmatter.image.width]}
+          sizes="100vw"
+          src={frontmatter.image}
+          alt={frontmatter.imageAlt}
+          class="h-48 w-full object-cover sm:h-64"
+          loading="eager"
+        />
+      </div>
+    )
+  }
+  <article class="max-w-prose px-4 md:px-6 md:text-lg">
     <h1 class="my-4 font-serif text-3xl md:mt-8 md:text-5xl">
       {frontmatter.title}
     </h1>

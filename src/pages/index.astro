@@ -12,6 +12,7 @@ const recentPosts = sortedPosts.slice(0, 6);
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<div class="w-full max-w-7xl px-4 md:px-6">
   <div class="mb-16 mt-8 flex flex-col gap-4 md:mb-32 md:mt-28">
     <h1
       class="font-serif text-4xl font-bold tracking-tight sm:text-8xl sm:font-normal"
@@ -78,7 +79,6 @@ const recentPosts = sortedPosts.slice(0, 6);
               alt={data.imageAlt}
               class="h-72 rounded-lg object-cover object-center shadow ring-violet-600 ring-offset-4 ring-offset-neutral-50 transition duration-300 group-hover:ring-4 dark:ring-offset-gray-900"
               width={380}
-              height={288}
               densities={[1, 1.5, 1.75, 2, 3]}
             />
             <time
@@ -99,4 +99,5 @@ const recentPosts = sortedPosts.slice(0, 6);
       ))
     }
   </div>
+	</div>
 </Layout>
